@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfu63yd0cssdc"
+path="res://.godot/imported/JDSherbert - Ambiences Music Pack - Underwater City.ogg-15143fbc39f010b23642fc386e756fd5.oggvorbisstr"
+
+[deps]
+
+source_file="res://JDSherbert - Ambiences Music Pack [FREE]/JDSherbert - Ambiences Music Pack [FREE]/ogg/JDSherbert - Ambiences Music Pack - Underwater City.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Ambiences Music Pack - Underwater City.ogg-15143fbc39f010b23642fc386e756fd5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

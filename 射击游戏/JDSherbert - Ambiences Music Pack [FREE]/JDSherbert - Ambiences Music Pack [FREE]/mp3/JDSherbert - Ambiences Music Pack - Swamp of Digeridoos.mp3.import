@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f7o2j7cbtws5"
+path="res://.godot/imported/JDSherbert - Ambiences Music Pack - Swamp of Digeridoos.mp3-fbbd7bfda62b2d6d4656375a6f70424d.mp3str"
+
+[deps]
+
+source_file="res://JDSherbert - Ambiences Music Pack [FREE]/JDSherbert - Ambiences Music Pack [FREE]/mp3/JDSherbert - Ambiences Music Pack - Swamp of Digeridoos.mp3"
+dest_files=["res://.godot/imported/JDSherbert - Ambiences Music Pack - Swamp of Digeridoos.mp3-fbbd7bfda62b2d6d4656375a6f70424d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

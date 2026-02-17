@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bohknkjop2hqw"
+path="res://.godot/imported/JDSherbert - Ambiences Music Pack - The Blackpenny Pub.wav-82c548e555e368662f62f84b33eeaed3.sample"
+
+[deps]
+
+source_file="res://JDSherbert - Ambiences Music Pack [FREE]/JDSherbert - Ambiences Music Pack [FREE]/wav/JDSherbert - Ambiences Music Pack - The Blackpenny Pub.wav"
+dest_files=["res://.godot/imported/JDSherbert - Ambiences Music Pack - The Blackpenny Pub.wav-82c548e555e368662f62f84b33eeaed3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

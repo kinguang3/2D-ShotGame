@@ -1,0 +1,387 @@
+[gd_scene format=3 uid="uid://d1jslm3kn1e1r"]
+
+[ext_resource type="Script" uid="uid://bakkr2f5rso58" path="res://Script/mainmenu.gd" id="1_fuin7"]
+[ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="1_jmcqw"]
+[ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_6xc76"]
+[ext_resource type="AudioStream" uid="uid://dfx3ly8icybe5" path="res://游戏素材/Home Sound Effects/New Assets Jam/Writing.wav" id="4_6xc76"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_427s3"]
+font = ExtResource("3_6xc76")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_427s3"]
+atlas = ExtResource("1_jmcqw")
+region = Rect2(118, 71, 44, 11)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6xc76"]
+font = ExtResource("3_6xc76")
+font_size = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81nvf"]
+atlas = ExtResource("1_jmcqw")
+region = Rect2(180, 71, 51, 13)
+
+[node name="MainMenu" type="Control" unique_id=251346861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fuin7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1781488162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="." unique_id=1368562639]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1900919119]
+position = Vector2(320.5, 180.5)
+scale = Vector2(6.65625, 3.739583)
+texture = ExtResource("1_jmcqw")
+region_enabled = true
+region_rect = Rect2(4, 6, 96, 96)
+
+[node name="Title" type="Label" parent="." unique_id=507110258]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.5
+offset_top = 20.0
+offset_right = 86.5
+offset_bottom = 89.0
+grow_horizontal = 2
+text = "BLACKSHOT
+     GAME"
+label_settings = SubResource("LabelSettings_427s3")
+
+[node name="MainButtons" type="Control" parent="." unique_id=660197680]
+custom_minimum_size = Vector2(350, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -60.0
+offset_right = 175.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainButtons" unique_id=550398986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Control" parent="MainButtons/VBoxContainer" unique_id=1656348456]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="PlayButton" type="TextureButton" parent="MainButtons/VBoxContainer/Play" unique_id=337884042]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_right = 22.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_427s3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainButtons/VBoxContainer/Play/PlayButton" unique_id=786988579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="Settings" type="Control" parent="MainButtons/VBoxContainer" unique_id=1200070056]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="SettingsButton" type="TextureButton" parent="MainButtons/VBoxContainer/Settings" unique_id=1660576319]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_right = 22.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_427s3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainButtons/VBoxContainer/Settings/SettingsButton" unique_id=1982920465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="Quit" type="Control" parent="MainButtons/VBoxContainer" unique_id=868315994]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="QuitButton" type="TextureButton" parent="MainButtons/VBoxContainer/Quit" unique_id=806677362]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_right = 22.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_427s3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainButtons/VBoxContainer/Quit/QuitButton" unique_id=1119919398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="SettingsButtons" type="Control" parent="." unique_id=525262255]
+custom_minimum_size = Vector2(350, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 266.0
+offset_top = -60.0
+offset_right = 616.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsButtons" unique_id=1006680951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Music" type="Control" parent="SettingsButtons/VBoxContainer" unique_id=1070560174]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="MusicButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/Music" unique_id=411949280]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_81nvf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicLabel" type="Label" parent="SettingsButtons/VBoxContainer/Music/MusicButton" unique_id=1624320561]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "MUSIC:ON"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="SFX" type="Control" parent="SettingsButtons/VBoxContainer" unique_id=1662589331]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="SFXButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/SFX" unique_id=834612602]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_81nvf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SFXLabel" type="Label" parent="SettingsButtons/VBoxContainer/SFX/SFXButton" unique_id=1637619673]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SFX:ON"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="Window" type="Control" parent="SettingsButtons/VBoxContainer" unique_id=780131362]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="WindowButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/Window" unique_id=1127189412]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_81nvf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="WindowLabel" type="Label" parent="SettingsButtons/VBoxContainer/Window/WindowButton" unique_id=2029823283]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "WINDOW"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="Back" type="Control" parent="SettingsButtons/VBoxContainer" unique_id=1262342632]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/Back" unique_id=1096322201]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_81nvf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SettingsButtons/VBoxContainer/Back/BackButton" unique_id=1912261144]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+label_settings = SubResource("LabelSettings_6xc76")
+
+[node name="UISound" type="AudioStreamPlayer" parent="." unique_id=899012923]
+stream = ExtResource("4_6xc76")
+volume_db = -2.0
+pitch_scale = 2.14
+bus = &"SFX"
+
+[connection signal="pressed" from="MainButtons/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainButtons/VBoxContainer/Settings/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainButtons/VBoxContainer/Quit/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SettingsButtons/VBoxContainer/Music/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="SettingsButtons/VBoxContainer/SFX/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="SettingsButtons/VBoxContainer/Window/WindowButton" to="." method="_on_window_button_pressed"]
+[connection signal="pressed" from="SettingsButtons/VBoxContainer/Back/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ciyjp0dtmhe0p"]
+
+[ext_resource type="Script" uid="uid://bvmpo48bw8q15" path="res://Player/player.gd" id="1_l3xgm"]
+
+[node name="PlayerBase" type="CharacterBody2D" unique_id=235996426]
+script = ExtResource("1_l3xgm")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=721138799]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1940786420]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=77827668]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1881140478]

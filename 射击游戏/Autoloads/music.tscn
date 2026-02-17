@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bmjdh0gygn8s5"]
+
+[ext_resource type="AudioStream" uid="uid://ci36rjc506386" path="res://JDSherbert - Ambiences Music Pack [FREE]/JDSherbert - Ambiences Music Pack [FREE]/mp3/JDSherbert - Ambiences Music Pack - Bloodrat Sewers.mp3" id="1_8261y"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=374652660]
+stream = ExtResource("1_8261y")
+autoplay = true
+bus = &"Music"

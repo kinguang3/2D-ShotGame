@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi3j55suj6imo"
+path="res://.godot/imported/Drawing fast.wav-cbc0fc29d7df1807b4724948c156ea43.sample"
+
+[deps]
+
+source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Drawing fast.wav"
+dest_files=["res://.godot/imported/Drawing fast.wav-cbc0fc29d7df1807b4724948c156ea43.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

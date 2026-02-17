@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cg14qegd8s5m5"
+path="res://.godot/imported/JDSherbert - Ambiences Music Pack - Dark Dark Woods.ogg-311349b86f93cfcffea45afbc1c0ea8f.oggvorbisstr"
+
+[deps]
+
+source_file="res://JDSherbert - Ambiences Music Pack [FREE]/JDSherbert - Ambiences Music Pack [FREE]/ogg/JDSherbert - Ambiences Music Pack - Dark Dark Woods.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Ambiences Music Pack - Dark Dark Woods.ogg-311349b86f93cfcffea45afbc1c0ea8f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

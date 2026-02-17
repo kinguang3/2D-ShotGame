@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d17urc78cnjcp"
+path="res://.godot/imported/JDSherbert - Ambiences Music Pack - Underwater City.wav-d7f46286db1a876ff062ad02a0096461.sample"
+
+[deps]
+
+source_file="res://JDSherbert - Ambiences Music Pack [FREE]/JDSherbert - Ambiences Music Pack [FREE]/wav/JDSherbert - Ambiences Music Pack - Underwater City.wav"
+dest_files=["res://.godot/imported/JDSherbert - Ambiences Music Pack - Underwater City.wav-d7f46286db1a876ff062ad02a0096461.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
