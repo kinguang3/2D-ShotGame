@@ -1,5 +1,30 @@
 [gd_scene format=3 uid="uid://bktv77apk0esf"]
 
+[ext_resource type="PackedScene" uid="uid://cfgn7ak88r0l4" path="res://UI/background.tscn" id="1_auvl8"]
+[ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="2_xnacw"]
+[ext_resource type="PackedScene" uid="uid://ba5s0i6eiurqm" path="res://UI/PlayerCard/player_card.tscn" id="3_obw8g"]
+[ext_resource type="PackedScene" uid="uid://swhqu5qvut6h" path="res://UI/WeaponCard/weapon_card.tscn" id="4_xnacw"]
+[ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="5_k5qyg"]
+[ext_resource type="Texture2D" uid="uid://ltnqy1711x3" path="res://Ornate Retro UI/spritesheets/BrownFantasyUISheet.png" id="6_xfjwu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k5qyg"]
+font = ExtResource("2_xnacw")
+font_size = 48
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e05ky"]
+atlas = ExtResource("5_k5qyg")
+region = Rect2(244, 72, 48, 13)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qub4"]
+font = ExtResource("2_xnacw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6myiq"]
+atlas = ExtResource("6_xfjwu")
+region = Rect2(244, 72, 48, 13)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtnfo"]
+font = ExtResource("2_xnacw")
+
 [node name="CharacterSelections" type="Control" unique_id=1986509653]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +32,115 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" parent="." unique_id=687280831 instance=ExtResource("1_auvl8")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Title" type="Label" parent="." unique_id=1799529127]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.5
+offset_top = 10.0
+offset_right = 249.5
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "CHARACTER SELECTION"
+label_settings = SubResource("LabelSettings_k5qyg")
+
+[node name="PlayContainer" type="HBoxContainer" parent="." unique_id=708976350]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 90.0
+offset_right = 225.0
+offset_bottom = 170.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="PlayerCard" parent="PlayContainer" unique_id=1580224536 instance=ExtResource("3_obw8g")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerCard2" parent="PlayContainer" unique_id=1231469200 instance=ExtResource("3_obw8g")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="WeaponContainer" type="HBoxContainer" parent="." unique_id=643497886]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 180.0
+offset_right = 225.0
+offset_bottom = 260.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="WeaponCard" parent="WeaponContainer" unique_id=107418426 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="Buttons" type="Control" parent="." unique_id=141068319]
+custom_minimum_size = Vector2(360, 60)
+anchors_preset = 0
+offset_left = 145.0
+offset_top = 270.0
+offset_right = 505.0
+offset_bottom = 330.0
+
+[node name="PlayButton" type="TextureButton" parent="Buttons" unique_id=375427575]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 5.0
+offset_right = 155.0
+offset_bottom = 65.0
+texture_normal = SubResource("AtlasTexture_e05ky")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Buttons/PlayButton" unique_id=931427629]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_0qub4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="Buttons" unique_id=291065439]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = 196.0
+offset_top = 5.0
+offset_right = 316.0
+offset_bottom = 65.0
+texture_normal = SubResource("AtlasTexture_6myiq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Buttons/BackButton" unique_id=929584069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+label_settings = SubResource("LabelSettings_vtnfo")
+horizontal_alignment = 1
+vertical_alignment = 1

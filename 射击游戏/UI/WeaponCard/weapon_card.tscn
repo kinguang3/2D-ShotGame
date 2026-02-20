@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://swhqu5qvut6h"]
+
+[ext_resource type="Texture2D" uid="uid://ltnqy1711x3" path="res://Ornate Retro UI/spritesheets/BrownFantasyUISheet.png" id="1_vikt7"]
+[ext_resource type="Texture2D" uid="uid://da0s67pfmlmvb" path="res://Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack03.png" id="2_m1dkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uanoi"]
+atlas = ExtResource("1_vikt7")
+region = Rect2(180, 6, 48, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmst1"]
+atlas = ExtResource("2_m1dkg")
+region = Rect2(452, 44, 10, 13)
+
+[node name="WeaponCard" type="TextureButton" unique_id=107418426]
+texture_normal = SubResource("AtlasTexture_uanoi")
+stretch_mode = 5
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1042536931]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_fmst1")
+stretch_mode = 5
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=744155079]

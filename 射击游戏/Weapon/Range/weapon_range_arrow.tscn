@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cex6jxc7xa8lb"]
+
+[ext_resource type="PackedScene" uid="uid://d4iphjupvv4am" path="res://Weapon/Range/weapon_range_base.tscn" id="1_ay6bs"]
+[ext_resource type="Texture2D" uid="uid://da0s67pfmlmvb" path="res://Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack03.png" id="2_kfqld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o5tp"]
+atlas = ExtResource("2_kfqld")
+region = Rect2(553, 44, 8, 13)
+
+[node name="WeaponRangeArrow" unique_id=467102266 instance=ExtResource("1_ay6bs")]
+
+[node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="0" unique_id=916308753]
+position = Vector2(11, 0)
+texture = SubResource("AtlasTexture_6o5tp")
+
+[node name="Marker2D" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="1" unique_id=1339899675]
+position = Vector2(16, 0)

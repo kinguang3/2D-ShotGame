@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfgn7ak88r0l4"]
+
+[ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="1_1y4cr"]
+
+[node name="Background" type="TextureRect" unique_id=687280831]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975319731]
+position = Vector2(320.5, 180.5)
+scale = Vector2(6.65625, 3.739583)
+texture = ExtResource("1_1y4cr")
+region_enabled = true
+region_rect = Rect2(4, 6, 96, 96)

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ba5s0i6eiurqm"]
+
+[ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="1_aj60p"]
+[ext_resource type="Texture2D" uid="uid://haw3cjj5101b" path="res://Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_p6pl2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w6ip"]
+atlas = ExtResource("1_aj60p")
+region = Rect2(180, 6, 48, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huvul"]
+atlas = ExtResource("2_p6pl2")
+region = Rect2(41, 39, 15, 18)
+
+[node name="PlayerCard" type="TextureButton" unique_id=1580224536]
+custom_minimum_size = Vector2(60, 60)
+texture_normal = SubResource("AtlasTexture_1w6ip")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Icon" type="TextureRect" parent="." unique_id=2079459558]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_huvul")
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=990301138]

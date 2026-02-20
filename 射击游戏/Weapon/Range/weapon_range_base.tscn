@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d4iphjupvv4am"]
+
+[ext_resource type="Script" uid="uid://w4a68kn70p26" path="res://Weapon/Range/weapon_range.gd" id="1_s1vpb"]
+
+[node name="WeaponRangeBase" type="Node2D" unique_id=467102266]
+script = ExtResource("1_s1vpb")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=419293569]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=916308753]
+unique_name_in_owner = true
+
+[node name="Marker2D" type="Marker2D" parent="Pivot" unique_id=1339899675]
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=357672158]

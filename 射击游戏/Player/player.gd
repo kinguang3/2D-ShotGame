@@ -4,12 +4,16 @@ class_name Player
 @export var data : PlayerData#用引号
 @onready var visuals: Node2D = $Visuals
 @onready var anim_sprite: AnimatedSprite2D = %AnimatedSprite2D
+@onready var health_componet: HealthComponet = $HealthComponet
 
 
 
 var can_move = true
 var movement : Vector2
 var direction : Vector2
+
+func _ready() -> void:
+	health_componet.init_health(data.max_hp)
 
 
 func _physics_process(delta: float) -> void:#平面角色的基本运动逻辑
@@ -37,10 +41,33 @@ func rotate_player() -> void:
 	pass
 	
 	
-	
-	
-	
-	
-	
-	
-	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		health_componet.take_damage(1)
+
+func _on_health_componet_on_unit_damaged(amount: float) -> void:
+	EventBus.on_player_health_updated.emit(health_componet.current_health,data.max_hp)
+
+
+
+
+
+
+
+
+
+
+func _on_health_componet_on_unit_dead() -> void:
+	queue_free()
+
+
+
+
+
+
+
+
+
+
+func _on_health_componet_on_unit_healed(amount: float) -> void:
+	pass # Replace with function body.

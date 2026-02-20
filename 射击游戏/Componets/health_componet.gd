@@ -9,7 +9,10 @@ class_name HealthComponet
 signal on_unit_damaged(amount:float)
 signal on_unit_healed(amount:float)
 signal on_unit_dead
+'''
+定义三个信号是为了方便编写发生生命事件之后的反馈
 
+'''
 
 
 var current_health: float

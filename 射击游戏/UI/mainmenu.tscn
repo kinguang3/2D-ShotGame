@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bakkr2f5rso58" path="res://Script/mainmenu.gd" id="1_fuin7"]
 [ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="1_jmcqw"]
+[ext_resource type="PackedScene" uid="uid://cfgn7ak88r0l4" path="res://UI/background.tscn" id="2_81nvf"]
 [ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_6xc76"]
 [ext_resource type="AudioStream" uid="uid://dfx3ly8icybe5" path="res://游戏素材/Home Sound Effects/New Assets Jam/Writing.wav" id="4_6xc76"]
 
@@ -39,20 +40,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Background" type="TextureRect" parent="." unique_id=1368562639]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1900919119]
-position = Vector2(320.5, 180.5)
-scale = Vector2(6.65625, 3.739583)
-texture = ExtResource("1_jmcqw")
-region_enabled = true
-region_rect = Rect2(4, 6, 96, 96)
+[node name="Background" parent="." unique_id=687280831 instance=ExtResource("2_81nvf")]
+layout_mode = 0
+anchors_preset = 0
 
 [node name="Title" type="Label" parent="." unique_id=507110258]
 layout_mode = 1

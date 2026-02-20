@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://8xf8w3d1gcro"]
+
+[ext_resource type="Script" uid="uid://dr2qbt1swgj0c" path="res://Data/Weapons/weapon_data.gd" id="1_dq84t"]
+[ext_resource type="Texture2D" uid="uid://finmaw8w4slt" path="res://Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Arrow(projectile)/Arrow01(32x32).png" id="1_u651d"]
+
+[resource]
+script = ExtResource("1_dq84t")
+weapon_name = "Arrow"
+icon = ExtResource("1_u651d")
+damage = 1.0
+cooldown = 0.4
+mana_cost = 1.0
+spread = 7.0
+bullet_spreed = 250.0
+metadata/_custom_type_script = "uid://dr2qbt1swgj0c"
