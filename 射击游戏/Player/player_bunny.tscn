@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://udnu8n7kvque"]
+
+[ext_resource type="PackedScene" uid="uid://ciyjp0dtmhe0p" path="res://Player/player_base.tscn" id="1_c648e"]
+[ext_resource type="Texture2D" uid="uid://blvkxulqsu6ba" path="res://Assets/Sprites/Players/tile_0015.png" id="2_duyr4"]
+[ext_resource type="Resource" uid="uid://cb5fa6lh1sndm" path="res://Data/Player/playerbunny.tres" id="2_jmgko"]
+[ext_resource type="Texture2D" uid="uid://d3u1rr67e3yg" path="res://Assets/Sprites/Players/tile_0012.png" id="3_jmgko"]
+[ext_resource type="Texture2D" uid="uid://chs7lvyk6lwth" path="res://Assets/Sprites/Players/tile_0013.png" id="4_j8mws"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qed0q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_duyr4")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jmgko")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jmgko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j8mws")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxgbe"]
+radius = 8.0
+
+[node name="PlayerBunny" unique_id=235996426 instance=ExtResource("1_c648e")]
+data = ExtResource("2_jmgko")
+
+[node name="AnimatedSprite2D" parent="Visuals" parent_id_path=PackedInt32Array(721138799) index="1" unique_id=1940786420]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_qed0q")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=77827668]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_lxgbe")

@@ -2,18 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="1_sswsf"]
 [ext_resource type="Script" uid="uid://qwffnsrvyw1p" path="res://Arena/arena.gd" id="1_v8uor"]
+[ext_resource type="Texture2D" uid="uid://b5o6og4r1humu" path="res://Assets/Sprites/Weapons/Tiles/tile_0025.png" id="2_ts82m"]
 [ext_resource type="Texture2D" uid="uid://bks8tbd5ni2ug" path="res://Ornate Retro UI/spritesheets/DarkRedUISheet.png" id="3_uea7w"]
-[ext_resource type="Texture2D" uid="uid://haw3cjj5101b" path="res://Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="3_weid8"]
+[ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://Assets/Sprites/Players/tile_0000.png" id="3_weid8"]
 [ext_resource type="Texture2D" uid="uid://dfcpfjhik5kir" path="res://Ornate Retro UI/spritesheets/PastelPinkUISheet.png" id="5_uea7w"]
 [ext_resource type="PackedScene" uid="uid://bgk8an0d1nvcj" path="res://Player/player_shoter.tscn" id="6_weid8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weid8"]
 atlas = ExtResource("1_sswsf")
 region = Rect2(116, 6, 48, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g0v6a"]
-atlas = ExtResource("3_weid8")
-region = Rect2(139, 38, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ts82m"]
 atlas = ExtResource("1_sswsf")
@@ -33,6 +30,7 @@ region = Rect2(132, 171, 47, 6)
 
 [node name="Arena" type="Node2D" unique_id=952634685]
 script = ExtResource("1_v8uor")
+arena_cursor = ExtResource("2_ts82m")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=171283071]
 
@@ -65,7 +63,7 @@ offset_right = 15.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_g0v6a")
+texture = ExtResource("3_weid8")
 expand_mode = 1
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI/Player UI" unique_id=5638508]

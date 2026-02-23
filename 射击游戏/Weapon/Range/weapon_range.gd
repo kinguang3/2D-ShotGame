@@ -14,4 +14,4 @@ func use_weapon() -> void:
 
 func rotate_weapon() -> void:
 	directions = get_global_mouse_position()-global_position
-	sprite.flip_v=directions.x > 0
+	sprite.flip_v=directions.x < 0

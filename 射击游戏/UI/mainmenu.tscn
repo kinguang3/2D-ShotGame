@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bakkr2f5rso58" path="res://Script/mainmenu.gd" id="1_fuin7"]
 [ext_resource type="Texture2D" uid="uid://c06xd5lhd54lw" path="res://Ornate Retro UI/spritesheets/BlackGreyUISheet.png" id="1_jmcqw"]
+[ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://Assets/Sprites/Interface/Tilemap/tilemap_packed.png" id="2_6whui"]
 [ext_resource type="PackedScene" uid="uid://cfgn7ak88r0l4" path="res://UI/background.tscn" id="2_81nvf"]
 [ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_6xc76"]
 [ext_resource type="AudioStream" uid="uid://dfx3ly8icybe5" path="res://游戏素材/Home Sound Effects/New Assets Jam/Writing.wav" id="4_6xc76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3hvi"]
+atlas = ExtResource("2_6whui")
+region = Rect2(81, 65, 14, 14)
 
 [sub_resource type="LabelSettings" id="LabelSettings_427s3"]
 font = ExtResource("3_6xc76")
@@ -30,6 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fuin7")
+menu_cursor = SubResource("AtlasTexture_l3hvi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1781488162]
 layout_mode = 1
@@ -43,6 +49,10 @@ color = Color(0, 0, 0, 1)
 [node name="Background" parent="." unique_id=687280831 instance=ExtResource("2_81nvf")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Title" type="Label" parent="." unique_id=507110258]
 layout_mode = 1

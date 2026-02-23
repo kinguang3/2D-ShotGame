@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bvmpo48bw8q15" path="res://Player/player.gd" id="1_l3xgm"]
 [ext_resource type="Script" uid="uid://bibjo3ruxp2ix" path="res://Componets/health_componet.gd" id="2_8fx1m"]
+[ext_resource type="Texture2D" uid="uid://dawvmsgg5mc6o" path="res://Assets/Sprites/Shadow.png" id="2_vdc2k"]
 [ext_resource type="Script" uid="uid://vf1krsgoa05n" path="res://Player/weapon_controller.gd" id="3_vdc2k"]
 
 [node name="PlayerBase" type="CharacterBody2D" unique_id=235996426]
 script = ExtResource("1_l3xgm")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=721138799]
+
+[node name="Shadow" type="Sprite2D" parent="Visuals" unique_id=1183905977]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_vdc2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1940786420]
 unique_name_in_owner = true

@@ -75,6 +75,14 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 4
 
+[node name="PlayerCard3" parent="PlayContainer" unique_id=1173429108 instance=ExtResource("3_obw8g")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerCard4" parent="PlayContainer" unique_id=605703446 instance=ExtResource("3_obw8g")]
+layout_mode = 2
+size_flags_horizontal = 4
+
 [node name="WeaponContainer" type="HBoxContainer" parent="." unique_id=643497886]
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 1
@@ -89,6 +97,24 @@ grow_horizontal = 2
 alignment = 1
 
 [node name="WeaponCard" parent="WeaponContainer" unique_id=107418426 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="WeaponCard2" parent="WeaponContainer" unique_id=1848936702 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="WeaponCard3" parent="WeaponContainer" unique_id=1152897027 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="WeaponCard4" parent="WeaponContainer" unique_id=671863099 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="WeaponCard5" parent="WeaponContainer" unique_id=628197537 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="WeaponCard6" parent="WeaponContainer" unique_id=1083248097 instance=ExtResource("4_xnacw")]
+layout_mode = 2
+
+[node name="WeaponCard7" parent="WeaponContainer" unique_id=234208891 instance=ExtResource("4_xnacw")]
 layout_mode = 2
 
 [node name="Buttons" type="Control" parent="." unique_id=141068319]
