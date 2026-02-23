@@ -32,8 +32,7 @@ func update_fullscreen(is_on: bool) -> void:#更新全屏模式
 
 func _on_play_button_pressed() -> void:
 	ui_sound.play()
-	#Transition.traansition_to("res://UI/CharacterSelection/character_selections.tscn")
-	Transition.traansition_to("res://Arena/arena.tscn")
+	Transition.traansition_to("res://UI/CharacterSelection/character_selections.tscn")
 	pass # Replace with function body.
 
 

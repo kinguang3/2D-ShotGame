@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b2fxemy651u6l"]
+
+[ext_resource type="Texture2D" uid="uid://bbv84wvnnbldm" path="res://Assets/Sprites/Weapons/Tiles/tile_0007.png" id="1_w5epe"]
+[ext_resource type="Script" uid="uid://dr2qbt1swgj0c" path="res://Data/Weapons/weapon_data.gd" id="2_fuw24"]
+
+[resource]
+script = ExtResource("2_fuw24")
+weapon_name = "Shotgin"
+icon = ExtResource("1_w5epe")
+damage = 1.5
+cooldown = 0.7
+mana_cost = 2.0
+spread = 10.0
+bullet_spreed = 260.0
+metadata/_custom_type_script = "uid://dr2qbt1swgj0c"

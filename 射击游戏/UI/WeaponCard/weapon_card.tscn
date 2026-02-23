@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://swhqu5qvut6h"]
 
 [ext_resource type="Texture2D" uid="uid://ltnqy1711x3" path="res://Ornate Retro UI/spritesheets/BrownFantasyUISheet.png" id="1_vikt7"]
+[ext_resource type="Script" uid="uid://3hrrtxf4njdf" path="res://UI/WeaponCard/weapon_card.gd" id="2_m1dkg"]
 [ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://Assets/Sprites/Weapons/Tiles/tile_0001.png" id="2_vikt7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uanoi"]
@@ -10,6 +11,7 @@ region = Rect2(180, 6, 48, 47)
 [node name="WeaponCard" type="TextureButton" unique_id=107418426]
 texture_normal = SubResource("AtlasTexture_uanoi")
 stretch_mode = 5
+script = ExtResource("2_m1dkg")
 
 [node name="Icon" type="TextureRect" parent="." unique_id=1042536931]
 custom_minimum_size = Vector2(25, 25)
