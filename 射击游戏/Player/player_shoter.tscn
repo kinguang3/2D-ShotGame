@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cnttucjccgouq" path="res://Assets/Sprites/Players/tile_0003.png" id="4_jqoqq"]
 [ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://Assets/Sprites/Players/tile_0000.png" id="5_q0upu"]
 [ext_resource type="Texture2D" uid="uid://cemiyrcpjly84" path="res://Assets/Sprites/Players/tile_0001.png" id="6_oeoq3"]
-[ext_resource type="PackedScene" uid="uid://cex6jxc7xa8lb" path="res://Weapon/Range/weapon_range_arrow.tscn" id="7_jqoqq"]
 
 [sub_resource type="Resource" id="Resource_y2yb6"]
 script = ExtResource("2_rimqq")
@@ -59,6 +58,3 @@ autoplay = "idle"
 [node name="CollisionShape2D" parent="." index="1" unique_id=77827668]
 position = Vector2(0.79999995, -8)
 shape = SubResource("CircleShape2D_15x0m")
-
-[node name="WeaponRangeArrow" parent="WeaponController" parent_id_path=PackedInt32Array(1232165999) index="0" unique_id=467102266 instance=ExtResource("7_jqoqq")]
-position = Vector2(-0.8, -4.7999997)

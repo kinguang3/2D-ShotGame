@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bks8tbd5ni2ug" path="res://Ornate Retro UI/spritesheets/DarkRedUISheet.png" id="3_uea7w"]
 [ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://Assets/Sprites/Players/tile_0000.png" id="3_weid8"]
 [ext_resource type="Texture2D" uid="uid://dfcpfjhik5kir" path="res://Ornate Retro UI/spritesheets/PastelPinkUISheet.png" id="5_uea7w"]
-[ext_resource type="PackedScene" uid="uid://bgk8an0d1nvcj" path="res://Player/player_shoter.tscn" id="6_weid8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weid8"]
 atlas = ExtResource("1_sswsf")
@@ -99,5 +98,3 @@ stretch_margin_left = 3
 stretch_margin_right = 3
 texture_under = SubResource("AtlasTexture_rirfp")
 texture_progress = SubResource("AtlasTexture_m3njq")
-
-[node name="PlayerShoter" parent="." unique_id=235996426 instance=ExtResource("6_weid8")]

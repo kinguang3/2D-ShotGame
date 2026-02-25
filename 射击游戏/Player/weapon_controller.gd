@@ -1,18 +1,24 @@
 extends Node2D
 class_name WeaponController
-@onready var weapon_arrow: WeaponRange = $WeaponRangeArrow
 
 var current_weapon: Weapon
 var target_pos: Vector2
 
-func _ready() -> void:
-	current_weapon = weapon_arrow#创建初始武器
 
 
 
 func _process(delta: float) -> void:
 	target_pos = get_global_mouse_position()#得到鼠标的全局位置
 	rotate_weapon()
+
+func equip_weapon() -> void:
+	var weapon:Weapon = Global.get_weapon().instantiate()
+	weapon.global_position.y = -8
+	current_weapon = weapon
+	current_weapon.data = Global.selected_weapon
+	add_child(weapon)
+
+
 	
 	
 func rotate_weapon() -> void:

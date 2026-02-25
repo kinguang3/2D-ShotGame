@@ -16,6 +16,7 @@ texture = ExtResource("2_vdc2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1940786420]
 unique_name_in_owner = true
+scale = Vector2(1.25, 1.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=77827668]
 

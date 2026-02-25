@@ -5,6 +5,7 @@ class_name Player
 @onready var visuals: Node2D = $Visuals
 @onready var anim_sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var health_componet: HealthComponet = $HealthComponet
+@onready var weapon_controller: WeaponController = $WeaponController
 
 
 

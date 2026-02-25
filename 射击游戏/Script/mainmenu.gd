@@ -8,6 +8,7 @@ class_name Mainmenu
 @onready var music_label: Label = %MusicLabel
 @onready var sfx_label: Label = %SFXLabel
 @onready var window_label: Label = $SettingsButtons/VBoxContainer/Window/WindowButton/WindowLabel
+@onready var hover_sound: AudioStreamPlayer = $HoverSound
 
 
 func _ready() -> void:
@@ -79,6 +80,11 @@ func _on_back_button_pressed() -> void:
 	tween.tween_interval(0.1)#tween动画时间的间隔
 	tween.tween_property(main_buttons,"global_position:y",115,0.3)
 	pass # Replace with function body.
+
+
+func _on_button_mouse_entered() -> void:
+	hover_sound.play()
+
 
 
 func _notification(what: int) -> void:

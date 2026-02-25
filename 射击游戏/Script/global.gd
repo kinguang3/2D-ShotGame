@@ -10,6 +10,36 @@ var settings: Dictionary = {
 }
 
 
+var all_player: Dictionary[String,PackedScene]={
+	"Bunny":preload("uid://udnu8n7kvque"),
+	"Dog":preload("uid://bgk8an0d1nvcj"),
+	"Cat":preload("uid://ce5354e2aq8s2"),
+	"Mouse":preload("uid://bjomv30qd45e5")
+	
+}
+
+var all_weapon: Dictionary[String,PackedScene]={
+	"AK47":preload("uid://bvoie0j8aeayr"),
+	"Pistol":preload("uid://cex6jxc7xa8lb"),
+	"Mac10":preload("uid://dyhjf0lqlev6c"),
+	"Mp5":preload("uid://bbhsgwtjno46b"),
+	"Shotgun":preload("uid://d0ei6cs3kkd5g"),
+	"Sniper":preload("uid://dvv03lwuw7d3t"),
+	"Uzi":preload("uid://cex3ebw46f8jn")
+}
+
+
+var selected_player :PlayerData
+var selected_weapon :WeaponData
+
+
+func get_player() -> PackedScene:
+	return all_player[selected_player.id]
+
+func get_weapon() -> PackedScene:
+	return all_weapon[selected_weapon.weapon_name]
+
+
 func save_data() -> void:#存储数据的格式
 	var save = settings.duplicate()#返回字典的新副本。
 	

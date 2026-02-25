@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bbhsgwtjno46b"]
+
+[ext_resource type="PackedScene" uid="uid://d4iphjupvv4am" path="res://Weapon/Range/weapon_range_base.tscn" id="1_n6xrg"]
+[ext_resource type="Resource" uid="uid://cw4jkvqx1w0ne" path="res://Data/Weapons/weapon_mp5.tres" id="2_5to23"]
+[ext_resource type="Texture2D" uid="uid://d0unfm6gf7rj5" path="res://Assets/Sprites/Weapons/Tiles/tile_0004.png" id="3_vefaw"]
+
+[node name="WeaponRangeMp5" unique_id=467102266 instance=ExtResource("1_n6xrg")]
+data = ExtResource("2_5to23")
+
+[node name="Sprite2D" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="0" unique_id=916308753]
+position = Vector2(11, 0)
+texture = ExtResource("3_vefaw")
+
+[node name="Marker2D" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="1" unique_id=1339899675]
+position = Vector2(16, 0)

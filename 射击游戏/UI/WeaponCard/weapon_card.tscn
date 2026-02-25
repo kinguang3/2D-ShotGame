@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ltnqy1711x3" path="res://Ornate Retro UI/spritesheets/BrownFantasyUISheet.png" id="1_vikt7"]
 [ext_resource type="Script" uid="uid://3hrrtxf4njdf" path="res://UI/WeaponCard/weapon_card.gd" id="2_m1dkg"]
 [ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://Assets/Sprites/Weapons/Tiles/tile_0001.png" id="2_vikt7"]
+[ext_resource type="Texture2D" uid="uid://btvvlw1s6noca" path="res://Assets/Sprites/Interface/Selector.png" id="4_fmst1"]
+[ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://Assets/Sounds/button_hover.wav" id="4_uanoi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uanoi"]
 atlas = ExtResource("1_vikt7")
@@ -27,8 +29,32 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_vikt7")
 stretch_mode = 5
 
+[node name="Selector" type="TextureRect" parent="." unique_id=1294331300]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fmst1")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=744155079]
+stream = ExtResource("4_uanoi")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

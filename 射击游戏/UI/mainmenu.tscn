@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfgn7ak88r0l4" path="res://UI/background.tscn" id="2_81nvf"]
 [ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_6xc76"]
 [ext_resource type="AudioStream" uid="uid://dfx3ly8icybe5" path="res://游戏素材/Home Sound Effects/New Assets Jam/Writing.wav" id="4_6xc76"]
+[ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://Assets/Sounds/button_hover.wav" id="7_l3hvi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3hvi"]
 atlas = ExtResource("2_6whui")
@@ -378,10 +379,21 @@ volume_db = -2.0
 pitch_scale = 2.14
 bus = &"SFX"
 
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=1477145570]
+stream = ExtResource("7_l3hvi")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="MainButtons/VBoxContainer/Play/PlayButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MainButtons/VBoxContainer/Play/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="MainButtons/VBoxContainer/Settings/SettingsButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MainButtons/VBoxContainer/Settings/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="MainButtons/VBoxContainer/Quit/QuitButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MainButtons/VBoxContainer/Quit/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="SettingsButtons/VBoxContainer/Music/MusicButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="SettingsButtons/VBoxContainer/Music/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="mouse_entered" from="SettingsButtons/VBoxContainer/SFX/SFXButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="SettingsButtons/VBoxContainer/SFX/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="mouse_entered" from="SettingsButtons/VBoxContainer/Window/WindowButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="SettingsButtons/VBoxContainer/Window/WindowButton" to="." method="_on_window_button_pressed"]
+[connection signal="mouse_entered" from="SettingsButtons/VBoxContainer/Back/BackButton" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="SettingsButtons/VBoxContainer/Back/BackButton" to="." method="_on_back_button_pressed"]

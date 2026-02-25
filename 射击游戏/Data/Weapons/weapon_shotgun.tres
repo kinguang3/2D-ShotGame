@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_fuw24")
-weapon_name = "Shotgin"
+weapon_name = "Shotgun"
 icon = ExtResource("1_w5epe")
 damage = 1.5
 cooldown = 0.7
