@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dfts8ppsv4648"]
+
+[ext_resource type="Script" uid="uid://bys77pq0ptrb8" path="res://UI/Desscriptions/description_panel.gd" id="1_5p852"]
+[ext_resource type="Texture2D" uid="uid://c5vwsotmmnflp" path="res://Assets/Sprites/Interface/itembg.png" id="2_0h7bc"]
+[ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_ej7so"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_smsed"]
+font = ExtResource("3_ej7so")
+
+[node name="DescriptionPanel" type="Control" unique_id=78506119]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -440.0
+offset_bottom = -260.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_5p852")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=65383887]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0h7bc")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=1920467521]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SHIREN"
+label_settings = SubResource("LabelSettings_smsed")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

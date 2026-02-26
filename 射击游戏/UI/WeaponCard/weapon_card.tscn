@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://Assets/Sprites/Weapons/Tiles/tile_0001.png" id="2_vikt7"]
 [ext_resource type="Texture2D" uid="uid://btvvlw1s6noca" path="res://Assets/Sprites/Interface/Selector.png" id="4_fmst1"]
 [ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://Assets/Sounds/button_hover.wav" id="4_uanoi"]
+[ext_resource type="PackedScene" uid="uid://dfts8ppsv4648" path="res://UI/Desscriptions/description_panel.tscn" id="6_2ydxi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uanoi"]
 atlas = ExtResource("1_vikt7")
@@ -57,4 +58,13 @@ stretch_mode = 5
 stream = ExtResource("4_uanoi")
 bus = &"SFX"
 
+[node name="DescriptionPanel" parent="." unique_id=78506119 instance=ExtResource("6_2ydxi")]
+visible = false
+layout_mode = 1
+offset_left = -71.0
+offset_top = -99.0
+offset_right = 81.0
+offset_bottom = -46.0
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

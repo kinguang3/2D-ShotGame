@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cok3tryv1i5ys" path="res://UI/PlayerCard/player_card.gd" id="2_p6pl2"]
 [ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://Assets/Sounds/button_hover.wav" id="4_1w6ip"]
 [ext_resource type="Texture2D" uid="uid://btvvlw1s6noca" path="res://Assets/Sprites/Interface/Selector.png" id="4_huvul"]
+[ext_resource type="PackedScene" uid="uid://dfts8ppsv4648" path="res://UI/Desscriptions/description_panel.tscn" id="6_oqpo5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1w6ip"]
 atlas = ExtResource("1_aj60p")
@@ -57,4 +58,13 @@ stretch_mode = 5
 stream = ExtResource("4_1w6ip")
 bus = &"SFX"
 
+[node name="DescriptionPanel" parent="." unique_id=78506119 instance=ExtResource("6_oqpo5")]
+visible = false
+layout_mode = 1
+offset_left = -68.0
+offset_top = -101.0
+offset_right = 72.0
+offset_bottom = -61.0
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -12,7 +12,6 @@ class_name Mainmenu
 
 
 func _ready() -> void:
-	Global.load_data()#游戏开始时读取数据
 	Cursor.sprite.texture = menu_cursor
 	update_audio_bus("Music",music_label,Global.settings.music)#使指定的音乐线mute（静音）
 	update_audio_bus("SFX",sfx_label,Global.settings.sfx)#使指定的音乐线mute（静音）
