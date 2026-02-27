@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cex6jxc7xa8lb"]
 
 [ext_resource type="PackedScene" uid="uid://d4iphjupvv4am" path="res://Weapon/Range/weapon_range_base.tscn" id="1_ay6bs"]
-[ext_resource type="Resource" uid="uid://catskfscqwq2g" path="res://Data/Weapons/weapon_sniper.tres" id="2_6o5tp"]
+[ext_resource type="Resource" uid="uid://8xf8w3d1gcro" path="res://Data/Weapons/weapon_arrow.tres" id="2_6o5tp"]
 [ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://Assets/Sprites/Weapons/Tiles/tile_0001.png" id="2_kfqld"]
 
 [node name="WeaponRangePisto" unique_id=467102266 instance=ExtResource("1_ay6bs")]
@@ -11,5 +11,5 @@ data = ExtResource("2_6o5tp")
 position = Vector2(11, 0)
 texture = ExtResource("2_kfqld")
 
-[node name="Marker2D" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="1" unique_id=1339899675]
+[node name="FirePos" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="1" unique_id=1339899675]
 position = Vector2(16, 0)

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://24yn4elh71eu"
-path="res://.godot/imported/Cutlery drop.wav-80fe6f4ccf290f3cc9b596746f951d60.sample"
+path="res://.godot/imported/Cutlery drop.wav-0aafae564529fef744105cd645554eee.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Cutlery drop.wav"
-dest_files=["res://.godot/imported/Cutlery drop.wav-80fe6f4ccf290f3cc9b596746f951d60.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Cutlery drop.wav"
+dest_files=["res://.godot/imported/Cutlery drop.wav-0aafae564529fef744105cd645554eee.sample"]
 
 [params]
 

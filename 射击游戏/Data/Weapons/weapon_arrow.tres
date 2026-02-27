@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://8xf8w3d1gcro"]
 
 [ext_resource type="Script" uid="uid://dr2qbt1swgj0c" path="res://Data/Weapons/weapon_data.gd" id="1_dq84t"]
+[ext_resource type="PackedScene" uid="uid://c2ywaalnqmmdb" path="res://Bullet/bullet_pistol.tscn" id="1_jcxxe"]
 [ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://Assets/Sprites/Weapons/Tiles/tile_0001.png" id="1_u651d"]
 
 [resource]
@@ -11,5 +12,6 @@ damage = 1.0
 cooldown = 0.4
 mana_cost = 1.0
 spread = 7.0
-bullet_spreed = 250.0
+bullet_speed = 250.0
+bullet_scene = ExtResource("1_jcxxe")
 metadata/_custom_type_script = "uid://dr2qbt1swgj0c"

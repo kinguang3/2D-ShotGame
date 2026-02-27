@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bgjeqmwtpjdbs"
-path="res://.godot/imported/Pulling drawer.wav-61d8da7df60e6a4d2a4f8e901b2a27b2.sample"
+path="res://.godot/imported/Pulling drawer.wav-674536fe5b375f524f810fb8a9c84085.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Pulling drawer.wav"
-dest_files=["res://.godot/imported/Pulling drawer.wav-61d8da7df60e6a4d2a4f8e901b2a27b2.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Pulling drawer.wav"
+dest_files=["res://.godot/imported/Pulling drawer.wav-674536fe5b375f524f810fb8a9c84085.sample"]
 
 [params]
 

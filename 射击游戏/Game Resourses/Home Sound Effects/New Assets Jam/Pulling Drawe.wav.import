@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c7dbee17wvfvr"
-path="res://.godot/imported/Pulling Drawe.wav-44785cfc5330badfedd57adb83ef8eb2.sample"
+path="res://.godot/imported/Pulling Drawe.wav-14a346b8d9ec9470601554b09f165b27.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Pulling Drawe.wav"
-dest_files=["res://.godot/imported/Pulling Drawe.wav-44785cfc5330badfedd57adb83ef8eb2.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Pulling Drawe.wav"
+dest_files=["res://.godot/imported/Pulling Drawe.wav-14a346b8d9ec9470601554b09f165b27.sample"]
 
 [params]
 

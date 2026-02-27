@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bqxvbxco6mpxq"
-path="res://.godot/imported/Drawing 2.wav-d50262b159a4a4742255713debe582d0.sample"
+path="res://.godot/imported/Drawing 2.wav-f36b5f8c5d584b96b760eeb3cbd5c81a.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Drawing 2.wav"
-dest_files=["res://.godot/imported/Drawing 2.wav-d50262b159a4a4742255713debe582d0.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Drawing 2.wav"
+dest_files=["res://.godot/imported/Drawing 2.wav-f36b5f8c5d584b96b760eeb3cbd5c81a.sample"]
 
 [params]
 

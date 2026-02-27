@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://7jel2ccgru1p"
-path="res://.godot/imported/Footsteps.wav-5211920a26b7d596570672f4041c4c19.sample"
+path="res://.godot/imported/Footsteps.wav-ebd1ef7622a480ba73ede32aea536823.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Footsteps.wav"
-dest_files=["res://.godot/imported/Footsteps.wav-5211920a26b7d596570672f4041c4c19.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Footsteps.wav"
+dest_files=["res://.godot/imported/Footsteps.wav-ebd1ef7622a480ba73ede32aea536823.sample"]
 
 [params]
 

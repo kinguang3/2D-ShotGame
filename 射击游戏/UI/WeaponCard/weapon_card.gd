@@ -17,7 +17,7 @@ func set_data(value:WeaponData) -> void:
 
 func set_description() -> void:
 	var string = "Weapon: %s\n" % data.weapon_name
-	string+="Damage: %.0f\nCooldown: %.0f\nMCost: %.0f" %[data.damage,data.cooldown,data.mana_cost]
+	string+="Damage: %.1f\nCooldown: %.1f\nMCost: %.1f" %[data.damage,data.cooldown,data.mana_cost]
 	description_panel.set_text(string)
 
 func _on_mouse_entered() -> void:

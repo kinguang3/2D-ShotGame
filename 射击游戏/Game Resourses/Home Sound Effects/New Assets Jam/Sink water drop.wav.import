@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cehkqhgwcd41o"
-path="res://.godot/imported/Sink water drop.wav-d735b5e800c03ca718f3831f697dcb90.sample"
+path="res://.godot/imported/Sink water drop.wav-9303c7503f4315fc6216c870a57bc7c2.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Sink water drop.wav"
-dest_files=["res://.godot/imported/Sink water drop.wav-d735b5e800c03ca718f3831f697dcb90.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Sink water drop.wav"
+dest_files=["res://.godot/imported/Sink water drop.wav-9303c7503f4315fc6216c870a57bc7c2.sample"]
 
 [params]
 

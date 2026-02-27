@@ -11,5 +11,5 @@ data = ExtResource("2_smug6")
 position = Vector2(11, 0)
 texture = ExtResource("3_5p8qb")
 
-[node name="Marker2D" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="1" unique_id=1339899675]
+[node name="FirePos" parent="Pivot" parent_id_path=PackedInt32Array(419293569) index="1" unique_id=1339899675]
 position = Vector2(16, 0)

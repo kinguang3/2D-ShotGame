@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://djlefc4a5kvso"
-path="res://.godot/imported/Shower.wav-617986c110f6f366c3085cd61f40e8c4.sample"
+path="res://.godot/imported/Shower.wav-bf74250640af57ed8275ccec63f7e224.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Shower.wav"
-dest_files=["res://.godot/imported/Shower.wav-617986c110f6f366c3085cd61f40e8c4.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Shower.wav"
+dest_files=["res://.godot/imported/Shower.wav-bf74250640af57ed8275ccec63f7e224.sample"]
 
 [params]
 

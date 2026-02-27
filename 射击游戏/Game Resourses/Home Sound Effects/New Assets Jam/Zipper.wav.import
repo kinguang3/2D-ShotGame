@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dekott34eix2t"
-path="res://.godot/imported/Zipper.wav-1f4c99da44d47d37417f7c567abc6b9f.sample"
+path="res://.godot/imported/Zipper.wav-b6102150f64d5e44d78e22e7191c033f.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Zipper.wav"
-dest_files=["res://.godot/imported/Zipper.wav-1f4c99da44d47d37417f7c567abc6b9f.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Zipper.wav"
+dest_files=["res://.godot/imported/Zipper.wav-b6102150f64d5e44d78e22e7191c033f.sample"]
 
 [params]
 

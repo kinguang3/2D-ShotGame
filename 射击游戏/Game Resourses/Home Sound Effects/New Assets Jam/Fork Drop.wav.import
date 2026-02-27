@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://yrte5egrttwj"
-path="res://.godot/imported/Fork Drop.wav-046cb7e6409e439d6fa84afd05d0010f.sample"
+path="res://.godot/imported/Fork Drop.wav-63b46f90a54c6341faf471f01a817052.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Fork Drop.wav"
-dest_files=["res://.godot/imported/Fork Drop.wav-046cb7e6409e439d6fa84afd05d0010f.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Fork Drop.wav"
+dest_files=["res://.godot/imported/Fork Drop.wav-63b46f90a54c6341faf471f01a817052.sample"]
 
 [params]
 

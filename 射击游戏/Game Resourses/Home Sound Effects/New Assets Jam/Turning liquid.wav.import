@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0by2t26fppwr"
-path="res://.godot/imported/Turning liquid.wav-54d4526ee2a793971843321632e6ad1d.sample"
+path="res://.godot/imported/Turning liquid.wav-f8caacd9f69c8183b3527a8f5a6ab4f2.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Turning liquid.wav"
-dest_files=["res://.godot/imported/Turning liquid.wav-54d4526ee2a793971843321632e6ad1d.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Turning liquid.wav"
+dest_files=["res://.godot/imported/Turning liquid.wav-f8caacd9f69c8183b3527a8f5a6ab4f2.sample"]
 
 [params]
 

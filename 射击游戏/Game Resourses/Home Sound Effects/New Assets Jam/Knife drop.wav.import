@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://brqluvdinkah4"
-path="res://.godot/imported/Knife drop.wav-0c06eacafb074cd410d43803536bba78.sample"
+path="res://.godot/imported/Knife drop.wav-e9e1fd330641e4fe09d41ad4c8517b1c.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Knife drop.wav"
-dest_files=["res://.godot/imported/Knife drop.wav-0c06eacafb074cd410d43803536bba78.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Knife drop.wav"
+dest_files=["res://.godot/imported/Knife drop.wav-e9e1fd330641e4fe09d41ad4c8517b1c.sample"]
 
 [params]
 

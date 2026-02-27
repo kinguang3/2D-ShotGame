@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c2ywaalnqmmdb"]
+
+[ext_resource type="Script" uid="uid://kxibwoqyb4f2" path="res://Bullet/bullet_pistol.gd" id="1_ac5pv"]
+[ext_resource type="Texture2D" uid="uid://62erre4aea2m" path="res://Assets/Sprites/Weapons/All_Fire_Bullet_Pixel_16x16_00.png" id="2_xywuf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pibrl"]
+atlas = ExtResource("2_xywuf")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb0xe"]
+atlas = ExtResource("2_xywuf")
+region = Rect2(16, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay3bc"]
+atlas = ExtResource("2_xywuf")
+region = Rect2(32, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vghpx"]
+atlas = ExtResource("2_xywuf")
+region = Rect2(48, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kni6j"]
+atlas = ExtResource("2_xywuf")
+region = Rect2(64, 208, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wy062"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pibrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb0xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay3bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vghpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kni6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vsmr"]
+radius = 4.0
+
+[node name="BulletPistol" type="Area2D" unique_id=414535016]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_ac5pv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=537298477]
+sprite_frames = SubResource("SpriteFrames_wy062")
+autoplay = "default"
+frame_progress = 0.22307758
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=113909211]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_2vsmr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

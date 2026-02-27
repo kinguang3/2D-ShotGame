@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ches3mbgexp11"
-path="res://.godot/imported/Chair dragging.wav-d9d5c8dfc118b61b425aca3eaeb03b9d.sample"
+path="res://.godot/imported/Chair dragging.wav-fa94c85045d77be8a1902ab65d7564ee.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Chair dragging.wav"
-dest_files=["res://.godot/imported/Chair dragging.wav-d9d5c8dfc118b61b425aca3eaeb03b9d.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Chair dragging.wav"
+dest_files=["res://.godot/imported/Chair dragging.wav-fa94c85045d77be8a1902ab65d7564ee.sample"]
 
 [params]
 

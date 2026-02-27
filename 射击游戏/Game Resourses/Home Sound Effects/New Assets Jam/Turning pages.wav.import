@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cwwaregeuarkm"
-path="res://.godot/imported/Turning pages.wav-ce83dad29e34e8687d64828e4ac838d2.sample"
+path="res://.godot/imported/Turning pages.wav-17e98b7e9f9e3c3bcf175863ad747a45.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Turning pages.wav"
-dest_files=["res://.godot/imported/Turning pages.wav-ce83dad29e34e8687d64828e4ac838d2.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Turning pages.wav"
+dest_files=["res://.godot/imported/Turning pages.wav-17e98b7e9f9e3c3bcf175863ad747a45.sample"]
 
 [params]
 

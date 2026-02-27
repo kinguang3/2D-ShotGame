@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk13vhabf24nl"
-path="res://.godot/imported/dragonhpbar.png-84c00fb460753793483a4c9f873a6155.ctex"
+path="res://.godot/imported/dragonhpbar.png-7818cc68b880df26c986032b2d3d544d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://游戏素材/dragonhpbar.png"
-dest_files=["res://.godot/imported/dragonhpbar.png-84c00fb460753793483a4c9f873a6155.ctex"]
+source_file="res://Game Resourses/dragonhpbar.png"
+dest_files=["res://.godot/imported/dragonhpbar.png-7818cc68b880df26c986032b2d3d544d.ctex"]
 
 [params]
 

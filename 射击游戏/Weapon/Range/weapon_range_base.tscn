@@ -10,6 +10,7 @@ script = ExtResource("1_s1vpb")
 [node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=916308753]
 unique_name_in_owner = true
 
-[node name="Marker2D" type="Marker2D" parent="Pivot" unique_id=1339899675]
+[node name="FirePos" type="Marker2D" parent="Pivot" unique_id=1339899675]
+unique_name_in_owner = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=357672158]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://blq5n02ep6uqo"
-path="res://.godot/imported/Boiling.wav-685a08bba643da89154cf44b02091877.sample"
+path="res://.godot/imported/Boiling.wav-cd2a470b78f32c1167e3b6510d3d2ef8.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Boiling.wav"
-dest_files=["res://.godot/imported/Boiling.wav-685a08bba643da89154cf44b02091877.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Boiling.wav"
+dest_files=["res://.godot/imported/Boiling.wav-cd2a470b78f32c1167e3b6510d3d2ef8.sample"]
 
 [params]
 

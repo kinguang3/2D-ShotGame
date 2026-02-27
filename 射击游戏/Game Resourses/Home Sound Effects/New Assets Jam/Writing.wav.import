@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfx3ly8icybe5"
-path="res://.godot/imported/Writing.wav-01caf5603150ef8c8a6366ebc9814adf.sample"
+path="res://.godot/imported/Writing.wav-fefc59d306e29945248ea129b72a81e4.sample"
 
 [deps]
 
-source_file="res://游戏素材/Home Sound Effects/New Assets Jam/Writing.wav"
-dest_files=["res://.godot/imported/Writing.wav-01caf5603150ef8c8a6366ebc9814adf.sample"]
+source_file="res://Game Resourses/Home Sound Effects/New Assets Jam/Writing.wav"
+dest_files=["res://.godot/imported/Writing.wav-fefc59d306e29945248ea129b72a81e4.sample"]
 
 [params]
 
