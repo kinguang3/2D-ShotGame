@@ -16,4 +16,6 @@ func _process(delta: float) -> void:
 	
 
 func _on_body_entered(body: Node2D) -> void:
+	Global.creat_explosion(global_position)#子弹的位置
 	queue_free()
+	Global.create_damage_text(data.damage,body.global_position)

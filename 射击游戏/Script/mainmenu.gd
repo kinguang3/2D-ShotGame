@@ -36,6 +36,7 @@ func _on_play_button_pressed() -> void:
 	pass # Replace with function body.
 
 
+
 func _on_settings_button_pressed() -> void:
 	ui_sound.play()
 	var tween = create_tween()
@@ -89,3 +90,4 @@ func _on_button_mouse_entered() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		Global.save_data()
+		

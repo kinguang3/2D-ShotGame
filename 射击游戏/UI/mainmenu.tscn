@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://Assets/Sprites/Interface/Tilemap/tilemap_packed.png" id="2_6whui"]
 [ext_resource type="PackedScene" uid="uid://cfgn7ak88r0l4" path="res://UI/background.tscn" id="2_81nvf"]
 [ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_6xc76"]
-[ext_resource type="AudioStream" uid="uid://dfx3ly8icybe5" path="res://游戏素材/Home Sound Effects/New Assets Jam/Writing.wav" id="4_6xc76"]
+[ext_resource type="AudioStream" uid="uid://dfx3ly8icybe5" path="res://Game Resourses/Home Sound Effects/New Assets Jam/Writing.wav" id="4_6xc76"]
 [ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://Assets/Sounds/button_hover.wav" id="7_l3hvi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3hvi"]

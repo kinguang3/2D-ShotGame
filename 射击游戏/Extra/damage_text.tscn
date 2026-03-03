@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b8qwyqx8djwvi"]
+
+[ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="1_43yjs"]
+[ext_resource type="Script" uid="uid://c4qf4ucj2wu0j" path="res://Extra/damage_text.gd" id="1_ls62w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ls62w"]
+font = ExtResource("1_43yjs")
+
+[node name="DamageText" type="Control" unique_id=1501206681]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -620.0
+offset_bottom = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ls62w")
+
+[node name="Label" type="Label" parent="." unique_id=1461563019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_ls62w")
+horizontal_alignment = 1
+vertical_alignment = 1
