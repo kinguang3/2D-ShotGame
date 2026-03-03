@@ -18,6 +18,8 @@ func use_weapon() -> void:
 	can_use = false
 	cooldown.start()
 	anim_player.play("slash")
+	await  anim_player.animation_finished
+	anim_player.play("idle")
 	slash_sound.play()
 	for enemy: Node2D in entities:
 		Global.create_damage_text(data.damage,enemy.global_position)
