@@ -13,17 +13,17 @@ class_name Mainmenu
 
 func _ready() -> void:
 	Cursor.sprite.texture = menu_cursor
-	update_audio_bus("Music",music_label,Global.settings.music)#使指定的音乐线mute（静音）
-	update_audio_bus("SFX",sfx_label,Global.settings.sfx)#使指定的音乐线mute（静音）
+	update_audio_bus("Music",music_label,Global.settings.music) #使指定的音乐线mute（静音）
+	update_audio_bus("SFX",sfx_label,Global.settings.sfx) #使指定的音乐线mute（静音）
 	update_fullscreen(Global.settings.fullscreen)
 
 
-func update_audio_bus(bus_name: String,label: Label,is_on: bool) -> void:#更新music和sfx
-	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name),not is_on)#使指定的音乐线mute（静音）
-	label.text = "%s:%s" % [bus_name,"ON" if is_on else "OFF"]#格式化输出
+func update_audio_bus(bus_name: String,label: Label,is_on: bool) -> void: #更新music和sfx
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name),not is_on) #使指定的音乐线mute（静音）
+	label.text = "%s:%s" % [bus_name,"ON" if is_on else "OFF"] #格式化输出
 	
 
-func update_fullscreen(is_on: bool) -> void:#更新全屏模式
+func update_fullscreen(is_on: bool) -> void: #更新全屏模式
 	var mode = DisplayServer.WINDOW_MODE_FULLSCREEN if is_on else DisplayServer.WINDOW_MODE_WINDOWED
 	DisplayServer.window_set_mode(mode)
 	window_label.text = "FULLSCREEN" if is_on else "WINDOWED"

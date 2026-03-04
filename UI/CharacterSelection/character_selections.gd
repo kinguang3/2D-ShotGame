@@ -29,15 +29,15 @@ func load_selection_items() ->void:
 		node.queue_free()	
 	
 	
-	for data :PlayerData in players:#因为是场景，所以要实例化
-		var card :PlayerCard = PLAYER_CARD_SCEEN.instantiate()#则会向本地场景提供本地场景资源。
-		card.pressed.connect(_on_player_card_press.bind(data,card))#被绑定的参数在提供给 call() 的参数之后传递
+	for data :PlayerData in players: #因为是场景，所以要实例化
+		var card :PlayerCard = PLAYER_CARD_SCEEN.instantiate() #则会向本地场景提供本地场景资源。
+		card.pressed.connect(_on_player_card_press.bind(data,card)) #被绑定的参数在提供给 call() 的参数之后传递
 		play_container.add_child(card)
 		card.set_data(data)
 
 
 	for data :WeaponData in weapons:
-		var card :WeaponCard = WEAPON_CARD_SCEEN.instantiate()#则会向本地场景提供本地场景资源。
+		var card :WeaponCard = WEAPON_CARD_SCEEN.instantiate() #则会向本地场景提供本地场景资源。
 		card.pressed.connect(_on_weapon_card_press.bind(data,card))
 		weapon_container.add_child(card)
 		card.set_data(data)

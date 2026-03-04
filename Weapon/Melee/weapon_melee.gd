@@ -17,13 +17,13 @@ func use_weapon() -> void:
 	
 	can_use = false
 	cooldown.start()
-	anim_player.play("slash")#开始挥砍
-	slash_sound.play()#播放音效
+	anim_player.play("slash") #开始挥砍
+	slash_sound.play() #播放音效
 	
 	for enemy: Node2D in entities:
 		Global.create_damage_text(data.damage,enemy.global_position)
 	slash.global_rotation = pivot.global_rotation
-	slash.emitting = true#展示粒子效果
+	slash.emitting = true #展示粒子效果
 	await anim_player.animation_finished
 	anim_player.play("back")
 	await anim_player.animation_finished
@@ -40,7 +40,7 @@ func _on_cooldown_timeout() -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if is_instance_valid(body):#如果 instance 是有效的 Object（例如，没有从内存中删除），则返回 true
+	if is_instance_valid(body): #如果 instance 是有效的 Object（例如，没有从内存中删除），则返回 true
 		entities.append(body)
 
 
