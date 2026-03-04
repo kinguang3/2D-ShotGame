@@ -52,6 +52,34 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_khul8"]
+resource_name = "back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 10), Vector2(5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.6179938779914944, 0.0]
+}
+
 [sub_resource type="Animation" id="Animation_qjbgx"]
 resource_name = "idle"
 length = 0.2
@@ -66,7 +94,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(15, 0)]
+"values": [Vector2(5, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -113,6 +141,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_khul8"]
 _data = {
 &"RESET": SubResource("Animation_qxmi2"),
+&"back": SubResource("Animation_khul8"),
 &"idle": SubResource("Animation_qjbgx"),
 &"slash": SubResource("Animation_v18ou")
 }
