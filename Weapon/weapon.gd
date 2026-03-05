@@ -1,4 +1,4 @@
-extends Node2D#远程武器已经定义为node2d了，则继承自远程武器
+extends Node2D #远程武器已经定义为node2d了，则继承自远程武器
 class_name Weapon
 
 '''

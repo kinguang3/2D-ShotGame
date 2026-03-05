@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 func use_weapon() -> void:
 	var bullet:Bullet = data.bullet_scene.instantiate()
 	bullet.setup(data)
-	bullet.global_position = fire_pos.global_position
-	bullet.global_rotation = pivot.global_rotation + deg_to_rad(randf_range(-data.spread,data.spread))
+	bullet.global_position = fire_pos.global_position #继承武器标记的位置
+	bullet.global_rotation = pivot.global_rotation + deg_to_rad(randf_range(-data.spread,data.spread)) #继承武器的旋转属性并添加随机值
 	get_tree().root.add_child(bullet)
 
 func rotate_weapon() -> void:
