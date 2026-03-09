@@ -82,5 +82,5 @@ func load_game_selection() -> void:
 	player.weapon_controller.equip_weapon()
 
 func  _on_player_health_updated(current:float,max:float) -> void:
-	health_bar.value = current / max   #保持相对比例
+	health_bar.value = current / max #保持相对比例
 	

@@ -39,7 +39,7 @@ func  heal(value:float)->void:
 	if 	current_health>max_health:
 		return
 	
-	current_health=min(max_health,current_health+value)#防止超出最大血量
+	current_health=min(max_health,current_health+value) #防止超出最大血量
 	on_unit_healed.emit(value)
 	
 	
