@@ -22,7 +22,7 @@ func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	generate_level_layout()
-	select_special_rooms()
+	select_special_rooms()#保证先创建房间网格，再选择特殊房间
 	
 	
 	load_game_selection()
@@ -51,12 +51,33 @@ func generate_level_layout() -> void:
 	for key:Vector2i in grid.keys():
 		print(key)
 
-func select_special_rooms() -> void:
-	pass
 
+func create_room() -> void:
+	print("Creating rooms...")
+	#for room_coord:Vector2i 
+
+
+
+
+
+func select_special_rooms() -> void:#初始换房间
+	start_room_coord = Vector2i.ZERO#初始化房间的坐标为(0,0)
+	end_room_coord = find_farthest_room()
+	print("Start:%s" % start_room_coord)#测试
+	print("End:%s" % end_room_coord)
+
+func find_farthest_room() -> Vector2i:#最后的房间是坐标最远的房间
+	var farthest_room_coord = start_room_coord #默认最后的房间是开始的房间
+	var max_dist = 0.0 #开始最远距离为0 
+	for room_coord:Vector2i in grid.keys():
+		var dist = start_room_coord.distance_to(room_coord)
+		if dist > max_dist:#找到最远距离
+			max_dist = dist
+			farthest_room_coord = room_coord
+	return farthest_room_coord
 	
 func load_game_selection() -> void:
-	var player:Player = Global.get_player().instantiate()
+	var player:Player = Global.get_player().instantiate()#实例化玩家场景到地图中
 	add_child(player)
 	player.weapon_controller.equip_weapon()
 
