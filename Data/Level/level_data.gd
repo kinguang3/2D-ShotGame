@@ -3,8 +3,11 @@ class_name LevelData
 
 @export var num_sub_levels:=4
 @export var num_rooms:=10
-@export var room_size:=Vector2(384, 384)
+@export var room_size:=Vector2i(384, 416)
 @export var room_scene:PackedScene
+@export var h_corridor:PackedScene
+@export var v_corridor:PackedScene
+@export var corridor_size:=Vector2i(192, 192)#x方向用于水平走廊，y方向用于垂直走廊
 @export var min_enemies_per_room:=5
 @export var max_enemies_per_room:=10
 @export var enemy_scene:Array[PackedScene]

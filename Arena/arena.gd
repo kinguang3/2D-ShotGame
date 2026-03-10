@@ -23,9 +23,9 @@ func _ready() -> void:
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	generate_level_layout()
 	select_special_rooms()#保证先创建房间网格，再选择特殊房间
-	
-	
-	load_game_selection()
+	create_rooms()#创建房间
+	create_corridor()#创建完房间,再创建连接
+	#load_game_selection()
 
 func generate_level_layout() -> void:
 	grid.clear()#清除字典,防止报错
@@ -52,13 +52,54 @@ func generate_level_layout() -> void:
 		print(key)
 
 
-func create_room() -> void:
+func create_rooms() -> void:
 	print("Creating rooms...")
-	#for room_coord:Vector2i 
+	for room_coord:Vector2i in grid.keys():
+		var room_instance:LevelRoom = level_data.room_scene.instantiate()#实例化场景不受变量类型限制
+		room_instance.position = room_coord * level_data.room_size#每一个房间场景的实例化在自己创建的坐标上
+		#建立房间大小,用二维坐标乘于房间大小
+		add_child(room_instance)#添加为子节点
+		grid[room_coord] = room_instance#实例化所有场景,将每一个coord和实例化场景连接
+		
+		connect_rooms(room_coord,room_instance)#用direction来连接所有房间
+		
+		#await get_tree().create_timer(0.5).timeout#创建时间看效果
 
+func create_corridor() -> void:
+	print("Create Corridor...")
+	for room_coord:Vector2i in grid.keys():
+		var room_instance:LevelRoom = grid[room_coord]#grid[room_coord]已经是实例化场景了
+		#创建右连接
+		var right_neighbor = room_coord + Vector2i.RIGHT
+		if grid.has(right_neighbor):
+			var corridor:Node2D = level_data.h_corridor.instantiate()
+			var room_pos = room_instance.position
+			var neighbor_pos = grid[right_neighbor].position
+			corridor.position = (room_pos+neighbor_pos)/2.0
+			add_child(corridor)
+		#创建下连接
+		var down_neighbor = room_coord + Vector2i.DOWN
+		if grid.has(down_neighbor):
+			var corridor:Node2D = level_data.v_corridor.instantiate()
+			var room_pos = room_instance.position
+			var neighbor_pos = grid[down_neighbor].position
+			corridor.position = (room_pos+neighbor_pos)/2.0
+			add_child(corridor)#先添加在操作和后添加在操作应该是一样的
+		
+		
+		
+		
+		
+		
 
-
-
+func connect_rooms(room_coord:Vector2i,room_instance:LevelRoom)->void:
+	var directions = [Vector2i.UP,Vector2i.DOWN,Vector2i.RIGHT,Vector2i.LEFT]
+	for direction in directions:
+		var next_coord = room_coord + direction
+		if grid.has(next_coord):
+			room_instance.open_walls(direction)
+		
+		
 
 func select_special_rooms() -> void:#初始换房间
 	start_room_coord = Vector2i.ZERO#初始化房间的坐标为(0,0)

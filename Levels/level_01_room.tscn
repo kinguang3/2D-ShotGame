@@ -18,34 +18,42 @@ tile_set = ExtResource("2_7pc4w")
 
 [node name="DoorUP" type="TileMapLayer" parent="Doors" unique_id=1062315058]
 tile_map_data = PackedByteArray("AAD+//P/AAAPAAUAAAABAPP/AAARAAUAAAD///P/AAAQAAUAAAAAAPP/AAAQAAUAAAD+//T/AAAPAAYAAAABAPT/AAARAAYAAAD+//X/AAAPAAcAAAD///X/AAAQAAcAAAAAAPX/AAAQAAcAAAABAPX/AAARAAcAAAA=")
+enabled = false
 tile_set = ExtResource("2_7pc4w")
 
 [node name="DoorRight" type="TileMapLayer" parent="Doors" unique_id=1438815611]
 tile_map_data = PackedByteArray("AAAKAP7/AAAPAAUAAAAKAP//AAAPAAYAAAAKAAAAAAAPAAYAAAAKAAEAAAAPAAcAAAALAP7/AAARAAUAAAALAP//AAARAAYAAAALAAAAAAARAAYAAAALAAEAAAARAAcAAAA=")
+enabled = false
 tile_set = ExtResource("2_7pc4w")
 
 [node name="DoorDown" type="TileMapLayer" parent="Doors" unique_id=1560497437]
 tile_map_data = PackedByteArray("AAD+/woAAAAPAAUAAAD+/wsAAAAPAAYAAAD+/wwAAAAPAAcAAAD//woAAAAQAAUAAAD//wwAAAAQAAcAAAAAAAoAAAAQAAUAAAAAAAwAAAAQAAcAAAABAAoAAAARAAUAAAABAAsAAAARAAYAAAABAAwAAAARAAcAAAA=")
+enabled = false
 tile_set = ExtResource("2_7pc4w")
 
 [node name="DoorLeft" type="TileMapLayer" parent="Doors" unique_id=1712589646]
 tile_map_data = PackedByteArray("AAD0//7/AAAPAAUAAAD0////AAAPAAYAAAD0/wAAAAAPAAYAAAD0/wEAAAAPAAcAAAD1//7/AAARAAUAAAD1////AAARAAYAAAD1/wAAAAARAAYAAAD1/wEAAAARAAcAAAA=")
+enabled = false
 tile_set = ExtResource("2_7pc4w")
 
-[node name="Walls2" type="Node2D" parent="." unique_id=570975383]
+[node name="WallLayers" type="Node2D" parent="." unique_id=570975383]
 
-[node name="WallUP" type="TileMapLayer" parent="Walls2" unique_id=2049633504]
+[node name="WallUP" type="TileMapLayer" parent="WallLayers" unique_id=2049633504]
+unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAD9//P/AAABAAAAAAD+//P/AAABAAAAAAAAAPP/AAABAAAAAAABAPP/AAABAAAAAAD///P/AAABAAAAAAD9//T/AAABAAIAAAACAPT/AAABAAIAAAD+//T/AAABAAIAAAD///T/AAABAAIAAAAAAPT/AAABAAIAAAABAPT/AAABAAIAAAACAPP/AAABAAAAAAD+//X/AAABAAMAAAD///X/AAABAAMAAAAAAPX/AAABAAMAAAABAPX/AAABAAMAAAACAPX/AAABAAMAAAD9//X/AAABAAMAAAA=")
 tile_set = ExtResource("2_7pc4w")
 
-[node name="WallRight" type="TileMapLayer" parent="Walls2" unique_id=447688987]
+[node name="WallRight" type="TileMapLayer" parent="WallLayers" unique_id=447688987]
+unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAAKAPv/AAAAAAEAAAAKAPz/AAAAAAEAAAAKAAIAAAAAAAEAAAAKAAEAAAAAAAEAAAAKAP3/AAAAAAEAAAAKAP7/AAAAAAEAAAAKAP//AAAAAAEAAAAKAAAAAAAAAAEAAAALAPv/AAACAAEAAAALAPz/AAACAAEAAAALAP3/AAACAAEAAAALAP7/AAACAAEAAAALAP//AAACAAEAAAALAAAAAAACAAEAAAALAAEAAAACAAEAAAALAAIAAAACAAEAAAA=")
 tile_set = ExtResource("2_7pc4w")
 
-[node name="WallDown" type="TileMapLayer" parent="Walls2" unique_id=1235800422]
+[node name="WallDown" type="TileMapLayer" parent="WallLayers" unique_id=1235800422]
+unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAD+/woAAAABAAAAAAD//woAAAABAAAAAAAAAAoAAAABAAAAAAABAAoAAAABAAAAAAD9/woAAAABAAAAAAACAAoAAAABAAAAAAD9/wsAAAABAAIAAAD+/wsAAAABAAIAAAD//wsAAAABAAIAAAAAAAsAAAABAAIAAAABAAsAAAABAAIAAAACAAsAAAABAAIAAAD9/wwAAAABAAMAAAD+/wwAAAABAAMAAAD//wwAAAABAAMAAAAAAAwAAAABAAMAAAABAAwAAAABAAMAAAACAAwAAAABAAMAAAA=")
 tile_set = ExtResource("2_7pc4w")
 
-[node name="WallLeft" type="TileMapLayer" parent="Walls2" unique_id=441254414]
+[node name="WallLeft" type="TileMapLayer" parent="WallLayers" unique_id=441254414]
+unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAD0//v/AAAAAAEAAAD0//z/AAAAAAEAAAD0//3/AAAAAAEAAAD0//7/AAAAAAEAAAD0////AAAAAAEAAAD0/wAAAAAAAAEAAAD0/wEAAAAAAAEAAAD0/wIAAAAAAAEAAAD1//v/AAACAAEAAAD1//z/AAACAAEAAAD1//3/AAACAAEAAAD1//7/AAACAAEAAAD1////AAACAAEAAAD1/wAAAAACAAEAAAD1/wEAAAACAAEAAAD1/wIAAAACAAEAAAA=")
 tile_set = ExtResource("2_7pc4w")
