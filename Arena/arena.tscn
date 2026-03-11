@@ -102,4 +102,4 @@ texture_under = SubResource("AtlasTexture_rirfp")
 texture_progress = SubResource("AtlasTexture_m3njq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=980801365]
-zoom = Vector2(0.15, 0.15)
+zoom = Vector2(0.1, 0.1)

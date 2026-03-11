@@ -1,6 +1,7 @@
 extends Node2D
 class_name LevelRoom
 #标记后续属性会在 Node 就绪时赋值
+@onready var player_spawn_pos: Marker2D = $PlayerSpawnPos
 @onready var room_wall:Dictionary[Vector2i, TileMapLayer] = {
 	Vector2i.UP : %WallUP,
 	Vector2i.RIGHT : %WallRight,

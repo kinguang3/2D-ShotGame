@@ -1,6 +1,6 @@
 extends TextureButton
 
-class_name PlayerCard
+class_name PlayerCard    
 
 @onready var icon: TextureRect = $Icon
 @onready var hover_sound: AudioStreamPlayer = $HoverSound
