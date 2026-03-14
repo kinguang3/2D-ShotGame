@@ -16,12 +16,15 @@ var grid:Dictionary[Vector2i,LevelRoom] = {}#Vector2i:使用整数坐标的 2D �
 var start_room_coord:Vector2i#初始房间坐标
 var end_room_coord:Vector2i#最远房间坐标
 var grid_cell_size: Vector2i#创建最小房间单元(一个走廊+一个房间)
+var current_room:LevelRoom
 
+
+var player:Player
 
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
-	
+	EventBus.on_player_room_entered.connect(_on_player_room_entered)
 	grid_cell_size = Vector2i(
 		level_data.corridor_size.x+level_data.room_size.x,
 		level_data.corridor_size.y+level_data.room_size.y
@@ -32,7 +35,18 @@ func _ready() -> void:
 	create_rooms()#创建房间
 	create_corridor()#创建完房间,再创建连接
 	load_game_selection()
+	
+	var first_room = grid[Vector2i.ZERO]
+	first_room.is_cleared = true#初始附房间不锁定
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		current_room.unlock_door()
+		current_room.is_cleared = true
 
+
+	
+	
 func generate_level_layout() -> void:
 	grid.clear()#清除字典,防止报错
 	print("Creating Layout...")#测试
@@ -126,7 +140,7 @@ func find_farthest_room() -> Vector2i:#最后的房间是坐标最远的房间
 	return farthest_room_coord
 	
 func load_game_selection() -> void:
-	var player:Player = Global.get_player().instantiate()#实例化玩家场景到地图中
+	player = Global.get_player().instantiate()#实例化玩家场景到地图中
 	var first_room:LevelRoom = grid[Vector2i.ZERO]
 	var spawn_pos:Marker2D = first_room.player_spawn_pos
 	add_child(player)
@@ -136,3 +150,8 @@ func load_game_selection() -> void:
 func  _on_player_health_updated(current:float,max:float) -> void:
 	health_bar.value = current / max #保持相对比例
 	
+
+func _on_player_room_entered(room:LevelRoom) -> void:
+	current_room = room
+	if not room.is_cleared:
+		room.lock_room()
