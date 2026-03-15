@@ -9,6 +9,7 @@ class_name Arena
 
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var mana_bar: TextureProgressBar = %ManaBar
+@onready var map_controller: MapController = $UI/MapController
 
 var grid:Dictionary[Vector2i,LevelRoom] = {}#Vector2i:使用整数坐标的 2D 向量。
 #Vector2i代表房间坐标,用levelroom连接每一个坐标
@@ -147,11 +148,26 @@ func load_game_selection() -> void:
 	player.global_position = spawn_pos.global_position#全局位置
 	player.weapon_controller.equip_weapon()#玩家的出生位置
 
+
+func find_coord_from_room(room:LevelRoom) -> Vector2i:
+	for coord:Vector2i in grid:
+		if grid[coord] == room:
+			return coord
+	return Vector2i.MAX
+
+
 func  _on_player_health_updated(current:float,max:float) -> void:
 	health_bar.value = current / max #保持相对比例
 	
 
 func _on_player_room_entered(room:LevelRoom) -> void:
-	current_room = room
-	if not room.is_cleared:
-		room.lock_room()
+	if room != current_room:
+		current_room = room
+		
+		var absolute_pos = find_coord_from_room(room)
+		var relative_pos = absolute_pos - start_room_coord
+		map_controller.update_on_room_entered(relative_pos)
+		
+		
+		if not room.is_cleared:
+			room.lock_room()

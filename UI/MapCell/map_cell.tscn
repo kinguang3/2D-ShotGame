@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cmphgec3ss4ks"]
+
+[ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://Assets/Sprites/Interface/Tilemap/tilemap_packed.png" id="1_8pd81"]
+[ext_resource type="Script" uid="uid://yv23th7v7lov" path="res://UI/MapCell/map_cell.gd" id="1_bpqir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpqir"]
+atlas = ExtResource("1_8pd81")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o38hi"]
+atlas = ExtResource("1_8pd81")
+region = Rect2(50, 66, 12, 12)
+
+[node name="MapCell" type="Control" unique_id=835515794]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -624.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bpqir")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=557542611]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_bpqir")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerIcon" type="TextureRect" parent="." unique_id=1242773459]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_o38hi")
+expand_mode = 1
+stretch_mode = 5
