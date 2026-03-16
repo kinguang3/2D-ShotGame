@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c5jwuu8l5nakv"]
+
+[ext_resource type="PackedScene" uid="uid://dcqik7vhvmfjo" path="res://Props/plant_1.tscn" id="1_h13vl"]
+[ext_resource type="Texture2D" uid="uid://b6i0q5i8rwf7l" path="res://Assets/Sprites/Tiles/tilemap_packed.png" id="2_2c6l5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcogr"]
+atlas = ExtResource("2_2c6l5")
+region = Rect2(64, 48, 16, 16)
+
+[node name="Plant3" unique_id=654465066 instance=ExtResource("1_h13vl")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=2039727198]
+texture = SubResource("AtlasTexture_jcogr")
