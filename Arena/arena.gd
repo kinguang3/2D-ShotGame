@@ -80,6 +80,7 @@ func create_rooms() -> void:
 		room_instance.position = room_coord * grid_cell_size#每一个房间场景的实例化在自己创建的坐标上
 		#建立房间大小,用二维坐标乘于房间大小(最小单元房间大小)
 		add_child(room_instance)#添加为子节点
+		room_instance.create_props(level_data)#通过当前房间的信息来创建环境
 		grid[room_coord] = room_instance#实例化所有场景,将每一个coord和实例化场景连接
 		
 		connect_rooms(room_coord,room_instance)#用direction来连接所有房间

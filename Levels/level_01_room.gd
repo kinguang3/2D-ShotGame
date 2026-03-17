@@ -21,7 +21,7 @@ class_name LevelRoom
 }
 
 
-var tiles:Array[Vector2i]
+var tiles:Array[Vector2i]#创建的刷新图层
 var is_cleared:bool#检测玩家是否把敌人清理完毕
 
 
@@ -33,6 +33,17 @@ func register_tiles() -> void:
 	for tile in tile_data.get_used_cells():#返回 Vector2i 数组，其中存放的是所有包含图块的单元格的位置
 		tiles.append(tile)#存入数组
 	
+
+func create_props(data:LevelData) -> void:
+	for i in data.max_props_per_room:
+		var tile_coord:Vector2i = tiles.pick_random()#随机选择一个图块放置
+		var tile_pos:Vector2 = tile_data.map_to_local(tile_coord)#返回单元格的中心位置，使用 TileMapLayer 的局部坐标
+		var random_prop:PackedScene = data.props.pick_random()
+		var instance:Area2D = random_prop.instantiate()
+		instance.position = tile_pos
+		add_child(instance)
+
+
 
 func lock_room() -> void:
 	for direction in clear_door_nodes:

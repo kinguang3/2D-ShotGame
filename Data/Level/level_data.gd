@@ -10,5 +10,7 @@ class_name LevelData
 @export var corridor_size:=Vector2i(192, 150)#x方向用于水平走廊，y方向用于垂直走廊
 @export var min_enemies_per_room:=5
 @export var max_enemies_per_room:=10
+@export var max_props_per_room = 5
+@export var props:Array[PackedScene]
 @export var enemy_scene:Array[PackedScene]
 @export var store_data:Array[LevelStoreData]
