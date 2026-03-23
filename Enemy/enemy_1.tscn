@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b8satfwodolfe"]
+
+[ext_resource type="Script" uid="uid://bcqoxtp308h61" path="res://Enemy/enemy_1.gd" id="1_5nq5f"]
+[ext_resource type="Texture2D" uid="uid://dawvmsgg5mc6o" path="res://Assets/Sprites/Shadow.png" id="2_sih67"]
+[ext_resource type="Texture2D" uid="uid://cgvslb1dnigc8" path="res://Assets/Sprites/Enemies/Sprites/tile_0000.png" id="3_bl76u"]
+[ext_resource type="Texture2D" uid="uid://c4stgcaqqu7as" path="res://Assets/Sprites/Enemies/Sprites/tile_0003.png" id="3_muxli"]
+[ext_resource type="Texture2D" uid="uid://d2gowyxbvkf5g" path="res://Assets/Sprites/Enemies/Sprites/tile_0001.png" id="4_muxli"]
+[ext_resource type="Texture2D" uid="uid://bmi1eu80faffk" path="res://Assets/Sprites/Enemies/Sprites/tile_0002.png" id="4_pct6h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pct6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_muxli")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pct6h")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bl76u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_muxli")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muxli"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pct6h"]
+radius = 7.0
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=1977277010]
+collision_layer = 4
+script = ExtResource("1_5nq5f")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=525527704]
+self_modulate = Color(1, 1, 1, 0.7058824)
+position = Vector2(5.9604645e-08, 9.536743e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_sih67")
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=711077315]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_pct6h")
+animation = &"move"
+autoplay = "move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554161724]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_muxli")
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=1492195677]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1786266343]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_pct6h")
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=100042497]
+bus = &"SFX"
