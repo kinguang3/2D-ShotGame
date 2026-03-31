@@ -34,6 +34,11 @@ func register_tiles() -> void:
 		tiles.append(tile)#存入数组
 	
 
+func get_free_spawn_position() -> Vector2:
+	var tile_cood:Vector2i = tiles.pick_random()
+	return tile_data.map_to_local(tile_cood)#返回单元格的中心位置，使用 TileMapLayer 的局部坐标。要将返回值转换为全局坐标
+
+
 func create_props(data:LevelData) -> void:
 	for i in data.max_props_per_room:
 		var tile_coord:Vector2i = tiles.pick_random()#随机选择一个图块放置
@@ -52,7 +57,7 @@ func lock_room() -> void:
 		if wall_door and not wall_door.enabled:
 			clear_door.enabled = true
 
-func unlock_door() -> void:
+func unlock_room() -> void:
 	for direction in clear_door_nodes:
 		clear_door_nodes[direction].enabled = false
 	

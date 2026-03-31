@@ -10,6 +10,7 @@ class_name Arena
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var mana_bar: TextureProgressBar = %ManaBar
 @onready var map_controller: MapController = $UI/MapController
+@onready var enemy_spawner: EnemySpawner = $EnemySpawner
 
 var grid:Dictionary[Vector2i,LevelRoom] = {}#Vector2i:使用整数坐标的 2D 向量。
 #Vector2i代表房间坐标,用levelroom连接每一个坐标
@@ -26,6 +27,9 @@ func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.on_player_room_entered.connect(_on_player_room_entered)
+	EventBus.on_room_cleared.connect(_on_room_cleared)
+	
+	
 	grid_cell_size = Vector2i(
 		level_data.corridor_size.x+level_data.room_size.x,
 		level_data.corridor_size.y+level_data.room_size.y
@@ -42,7 +46,7 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		current_room.unlock_door()
+		current_room.unlock_room()
 		current_room.is_cleared = true
 
 
@@ -148,7 +152,7 @@ func load_game_selection() -> void:
 	add_child(player)
 	player.global_position = spawn_pos.global_position#全局位置
 	player.weapon_controller.equip_weapon()#玩家的出生位置
-
+	Global.player_ref = player
 
 func find_coord_from_room(room:LevelRoom) -> Vector2i:
 	for coord:Vector2i in grid:
@@ -172,3 +176,12 @@ func _on_player_room_entered(room:LevelRoom) -> void:
 		
 		if not room.is_cleared:
 			room.lock_room()
+			enemy_spawner.spawn_enemies(level_data,room)
+			
+			
+
+
+func _on_room_cleared() -> void:
+	current_room.unlock_room()
+	current_room.is_cleared = true
+	

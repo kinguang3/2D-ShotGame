@@ -37,7 +37,7 @@ var all_weapon: Dictionary[String,PackedScene]={
 
 var selected_player :PlayerData
 var selected_weapon :WeaponData
-
+var player_ref :Player
 
 func _ready() -> void:
 	load_data() #游戏开始时读取数据,只读取一次

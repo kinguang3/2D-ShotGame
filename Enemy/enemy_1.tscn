@@ -41,7 +41,7 @@ animations = [{
 radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pct6h"]
-radius = 7.0
+radius = 9.055386
 
 [node name="Enemy1" type="CharacterBody2D" unique_id=1977277010]
 collision_layer = 4
@@ -73,3 +73,5 @@ shape = SubResource("CircleShape2D_pct6h")
 
 [node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=100042497]
 bus = &"SFX"
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

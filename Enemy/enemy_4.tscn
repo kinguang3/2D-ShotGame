@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://240xwtqw7rww"]
+
+[ext_resource type="PackedScene" uid="uid://b8satfwodolfe" path="res://Enemy/enemy_1.tscn" id="1_oilsd"]
+[ext_resource type="Texture2D" uid="uid://dt305ttjc2qw7" path="res://Assets/Sprites/Enemies/Sprites/tile_0015.png" id="2_05gvt"]
+[ext_resource type="Texture2D" uid="uid://xo043uc37wpm" path="res://Assets/Sprites/Enemies/Sprites/tile_0014.png" id="3_isgvk"]
+[ext_resource type="Texture2D" uid="uid://cijt4b5liatug" path="res://Assets/Sprites/Enemies/Sprites/tile_0012.png" id="4_06qdl"]
+[ext_resource type="Texture2D" uid="uid://dlawjfchfn4so" path="res://Assets/Sprites/Enemies/Sprites/tile_0013.png" id="5_sga5x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nbo0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_05gvt")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_isgvk")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_06qdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sga5x")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oilsd"]
+radius = 3.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hte02"]
+size = Vector2(18, 21.5)
+
+[node name="Enemy4" unique_id=1977277010 instance=ExtResource("1_oilsd")]
+
+[node name="AnimSprite" parent="." index="1" unique_id=711077315]
+sprite_frames = SubResource("SpriteFrames_nbo0b")
+animation = &"hurt"
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=554161724]
+shape = SubResource("CircleShape2D_oilsd")
+
+[node name="CollisionShape2D" parent="PlayerDetector" parent_id_path=PackedInt32Array(1492195677) index="0" unique_id=1786266343]
+position = Vector2(0, -10.25)
+shape = SubResource("RectangleShape2D_hte02")
