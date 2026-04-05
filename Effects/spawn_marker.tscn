@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://vt2qjnvkrhdg"]
+
+[ext_resource type="Texture2D" uid="uid://l1svgpj2tplr" path="res://Assets/Sprites/Enemies/Spawn_marker.png" id="1_wmqrh"]
+[ext_resource type="AudioStream" uid="uid://boxhps6qd6047" path="res://Assets/Sounds/spawn.ogg" id="2_y8ehk"]
+
+[sub_resource type="Animation" id="Animation_mjmda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_2yxys"]
+resource_name = "in"
+length = 1.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7, 1.05, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1.5, 1.5), Vector2(0.8, 0.8), Vector2(1.5, 1.5), Vector2(0.8, 0.8)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohvay"]
+_data = {
+&"RESET": SubResource("Animation_mjmda"),
+&"in": SubResource("Animation_2yxys")
+}
+
+[node name="SpawnMarker" type="Sprite2D" unique_id=544166041]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_wmqrh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=471809955]
+libraries/ = SubResource("AnimationLibrary_ohvay")
+autoplay = &"in"
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1540277122]
+stream = ExtResource("2_y8ehk")
+autoplay = true
+bus = &"SFX"
