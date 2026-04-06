@@ -17,5 +17,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	Global.creat_explosion(global_position) #子弹的位置
+	if body is Enemy:
+		Global.create_damage_text(data.damage,body.global_position) #显示伤害
+		body.health_componet.take_damage(data.damage)#因为body是enemy所以有自动补全
+		
 	queue_free()
-	Global.create_damage_text(data.damage,body.global_position) #显示伤害
+	

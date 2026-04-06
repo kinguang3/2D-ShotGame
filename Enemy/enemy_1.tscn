@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c4stgcaqqu7as" path="res://Assets/Sprites/Enemies/Sprites/tile_0003.png" id="3_muxli"]
 [ext_resource type="Texture2D" uid="uid://d2gowyxbvkf5g" path="res://Assets/Sprites/Enemies/Sprites/tile_0001.png" id="4_muxli"]
 [ext_resource type="Texture2D" uid="uid://bmi1eu80faffk" path="res://Assets/Sprites/Enemies/Sprites/tile_0002.png" id="4_pct6h"]
+[ext_resource type="Script" uid="uid://bibjo3ruxp2ix" path="res://Componets/health_componet.gd" id="7_pct6h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pct6h"]
 animations = [{
@@ -43,7 +44,14 @@ radius = 3.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pct6h"]
 radius = 9.055386
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muxli"]
+bg_color = Color(0.18240857, 0.019250503, 0.009813138, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pct6h"]
+bg_color = Color(0.6, 0.05882353, 0.11764706, 1)
+
 [node name="Enemy1" type="CharacterBody2D" unique_id=1977277010]
+scale = Vector2(1.5, 1.5)
 collision_layer = 4
 script = ExtResource("1_5nq5f")
 
@@ -74,4 +82,22 @@ shape = SubResource("CircleShape2D_pct6h")
 [node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=100042497]
 bus = &"SFX"
 
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1744622481]
+custom_minimum_size = Vector2(20, 2)
+offset_left = -10.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = -16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_muxli")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pct6h")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="HealthComponet" type="Node2D" parent="." unique_id=1171078161]
+script = ExtResource("7_pct6h")
+metadata/_custom_type_script = "uid://bibjo3ruxp2ix"
+
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="on_unit_damaged" from="HealthComponet" to="." method="_on_health_componet_on_unit_damaged"]
+[connection signal="on_unit_dead" from="HealthComponet" to="." method="_on_health_componet_on_unit_dead"]

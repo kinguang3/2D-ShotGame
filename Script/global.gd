@@ -12,6 +12,7 @@ const EXPLOSION_EFFECTS_SCEEN = preload("uid://nriecmsctdr7")
 const DAMAGE_TEXT_SCENE = preload("uid://b8qwyqx8djwvi")
 const SPAWN_MARKER_SCENE = preload("uid://vt2qjnvkrhdg")
 const DEAD_PARTICLE_SCENE = preload("uid://cj7hhiy85c3wr")
+const HIT_MATERIAL = preload("uid://cqvnlp0ewb35u")
 
 
 
@@ -66,9 +67,10 @@ func create_damage_text(value:float,pos:Vector2) -> void:
 	damage.setup(value)
 	pass
 
-func create_dead_particle(texture:Texture2D) -> void:
+func create_dead_particle(texture:Texture2D,pos:Vector2) -> void:
 	var particle = DEAD_PARTICLE_SCENE.instantiate() as GPUParticles2D
 	get_tree().root.add_child(particle)
+	particle.global_position = pos
 	particle.texture = texture
 	
 
