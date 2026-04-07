@@ -44,6 +44,9 @@ radius = 3.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pct6h"]
 radius = 9.055386
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5lxh6"]
+radius = 26.874193
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muxli"]
 bg_color = Color(0.18240857, 0.019250503, 0.009813138, 1)
 
@@ -78,6 +81,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1786266343]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_pct6h")
+
+[node name="EnemyDectector" type="Area2D" parent="." unique_id=375113573]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDectector" unique_id=1026809249]
+position = Vector2(0, -4.666667)
+shape = SubResource("CircleShape2D_5lxh6")
+debug_color = Color(0.8927705, 0.21226522, 0.6103873, 0.15686275)
 
 [node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=100042497]
 bus = &"SFX"

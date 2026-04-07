@@ -7,7 +7,7 @@ class_name Enemy
 @export var collision_damage = 2.0
 @export var dead_texture:Texture2D
 @export_group("Enemy Chase")#export_group是将导出变量分组,chase是追踪
-@export var chase_speed = 40
+@export var chase_speed = 60
 @export_group("Enemy Weapon")
 @export var move_speed = 40
 @export var weapon:WeaponData
@@ -17,6 +17,7 @@ class_name Enemy
 @onready var hurt_sound: AudioStreamPlayer = $HurtSound
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var health_componet: HealthComponet = $HealthComponet
+@onready var enemy_dectector: Area2D = $EnemyDectector
 
 
 var can_move:bool = true
@@ -30,8 +31,15 @@ func _physics_process(delta: float) -> void:
 	if not can_move : return
 	
 	var dir=global_position.direction_to(Global.player_ref.global_position)#返回从该向量指向 to 的归一化向量。
+	for enemy :Enemy in enemy_dectector.get_overlapping_bodies():#返回相交的 PhysicsBody2D 和 TileMap,接触到的body
+		if enemy != self and enemy.is_inside_tree():#如果该节点当前在 SceneTree 中，返回 true
+			var vector = global_position - enemy.global_position#每个敌人之间的方向坐标
+			dir += 10 * vector.normalized() / vector.length()#防止enemy之间的位置出现重置
+			
+		
 	velocity = dir * chase_speed
 	move_and_slide()
+	rotate_enemy()
 
 func rotate_enemy() -> void:
 	if global_position.x > Global.player_ref.global_position.x:
@@ -40,6 +48,10 @@ func rotate_enemy() -> void:
 		anim_sprite.flip_h = false
 
 func enemy_dead() -> void:
+	if is_killed:
+		return
+	
+	is_killed = true
 	Global.create_dead_particle(dead_texture,global_position)
 	EventBus.on_enemy_die.emit()
 	queue_free()
