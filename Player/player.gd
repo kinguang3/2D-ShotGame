@@ -12,12 +12,24 @@ class_name Player
 var can_move = true
 var movement : Vector2
 var direction : Vector2
+var cooldown:float
 
 func _ready() -> void:
 	health_componet.init_health(data.max_hp)
 
 
-func _physics_process(delta: float) -> void: #平面角色的基本运动逻辑
+func _process(delta: float) -> void:
+	weapon_controller.target_pos = get_global_mouse_position()#在原先weaponcontroller里面拿出来,为了给enemy添加武器
+	weapon_controller.rotate_weapon()
+	
+	cooldown -= delta
+	if Input.is_action_pressed("shoot"):
+		if cooldown <= 0:
+			weapon_controller.current_weapon.use_weapon()
+			cooldown = weapon_controller.current_weapon.data.cooldown#为了把weapon添加到enemy,单独将cooldown添加到player里面
+
+
+func _physics_process(_delta: float) -> void: #平面角色的基本运动逻辑
 	if not can_move:
 		return
 	direction = Input.get_vector("move_left","move_right","move_up","move_down") #通过指定正负 X 和 Y 轴的四个动作来获取输入向量。

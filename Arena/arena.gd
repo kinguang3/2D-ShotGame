@@ -151,7 +151,7 @@ func load_game_selection() -> void:
 	var spawn_pos:Marker2D = first_room.player_spawn_pos
 	add_child(player)
 	player.global_position = spawn_pos.global_position#全局位置
-	player.weapon_controller.equip_weapon()#玩家的出生位置
+	player.weapon_controller.equip_weapon(Global.selected_weapon)#玩家的出生位置
 	Global.player_ref = player
 
 func find_coord_from_room(room:LevelRoom) -> Vector2i:

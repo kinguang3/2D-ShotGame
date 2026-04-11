@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bvmpo48bw8q15" path="res://Player/player.gd" id="1_l3xgm"]
 [ext_resource type="Script" uid="uid://bibjo3ruxp2ix" path="res://Componets/health_componet.gd" id="2_8fx1m"]
 [ext_resource type="Texture2D" uid="uid://dawvmsgg5mc6o" path="res://Assets/Sprites/Shadow.png" id="2_vdc2k"]
-[ext_resource type="Script" uid="uid://vf1krsgoa05n" path="res://Player/weapon_controller.gd" id="3_vdc2k"]
+[ext_resource type="PackedScene" uid="uid://bw7a54qtf40gi" path="res://Weapon/weapon_controller.tscn" id="4_vdc2k"]
 
 [node name="PlayerBase" type="CharacterBody2D" unique_id=235996426]
 collision_layer = 2
@@ -27,8 +27,7 @@ scale = Vector2(1.25, 1.25)
 script = ExtResource("2_8fx1m")
 metadata/_custom_type_script = "uid://bibjo3ruxp2ix"
 
-[node name="WeaponController" type="Node2D" parent="." unique_id=1232165999]
-script = ExtResource("3_vdc2k")
+[node name="WeaponController" parent="." unique_id=421724324 instance=ExtResource("4_vdc2k")]
 
 [connection signal="on_unit_damaged" from="HealthComponet" to="." method="_on_health_componet_on_unit_damaged"]
 [connection signal="on_unit_dead" from="HealthComponet" to="." method="_on_health_componet_on_unit_dead"]

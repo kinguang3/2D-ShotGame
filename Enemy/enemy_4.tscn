@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b8satfwodolfe" path="res://Enemy/enemy_1.tscn" id="1_oilsd"]
 [ext_resource type="Texture2D" uid="uid://dt305ttjc2qw7" path="res://Assets/Sprites/Enemies/Sprites/tile_0015.png" id="2_05gvt"]
+[ext_resource type="Resource" uid="uid://cmjrpet8jn5on" path="res://Data/Weapons/Enemy/enemy_pistol.tres" id="2_isgvk"]
 [ext_resource type="Texture2D" uid="uid://xo043uc37wpm" path="res://Assets/Sprites/Enemies/Sprites/tile_0014.png" id="3_isgvk"]
 [ext_resource type="Texture2D" uid="uid://cijt4b5liatug" path="res://Assets/Sprites/Enemies/Sprites/tile_0012.png" id="4_06qdl"]
 [ext_resource type="Texture2D" uid="uid://dlawjfchfn4so" path="res://Assets/Sprites/Enemies/Sprites/tile_0013.png" id="5_sga5x"]
+[ext_resource type="Script" uid="uid://vf1krsgoa05n" path="res://Player/weapon_controller.gd" id="6_05gvt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nbo0b"]
 animations = [{
@@ -43,6 +45,7 @@ radius = 3.0
 size = Vector2(18, 21.5)
 
 [node name="Enemy4" unique_id=1977277010 instance=ExtResource("1_oilsd")]
+weapon = ExtResource("2_isgvk")
 
 [node name="AnimSprite" parent="." index="1" unique_id=711077315]
 sprite_frames = SubResource("SpriteFrames_nbo0b")
@@ -54,3 +57,7 @@ shape = SubResource("CircleShape2D_oilsd")
 [node name="CollisionShape2D" parent="PlayerDetector" parent_id_path=PackedInt32Array(1492195677) index="0" unique_id=1786266343]
 position = Vector2(0, -10.25)
 shape = SubResource("RectangleShape2D_hte02")
+
+[node name="WeaponController" type="Node2D" parent="." index="8" unique_id=651582117]
+script = ExtResource("6_05gvt")
+metadata/_custom_type_script = "uid://vf1krsgoa05n"

@@ -8,12 +8,6 @@ var cooldown :float
 func _process(delta: float) -> void:
 	rotate_weapon()
 	
-	cooldown -= delta
-	if Input.is_action_pressed("shoot"):
-		if cooldown <= 0:
-			use_weapon()
-			cooldown = data.cooldown
-	
 
 func use_weapon() -> void:
 	var bullet:Bullet = data.bullet_scene.instantiate()

@@ -10,7 +10,7 @@ class_name Enemy
 @export var chase_speed = 60
 @export_group("Enemy Weapon")
 @export var move_speed = 40
-@export var weapon:WeaponData
+@export var weapon:WeaponData#保证武器名字一样，不然访问不到
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimSprite
 @onready var player_detector: Area2D = $PlayerDetector
@@ -18,15 +18,29 @@ class_name Enemy
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var health_componet: HealthComponet = $HealthComponet
 @onready var enemy_dectector: Area2D = $EnemyDectector
+@onready var weapon_controller: WeaponController = $WeaponController#用weapon添加判定
 
 
 var can_move:bool = true
 var is_killed:bool
+
+
 func _ready() -> void:
 	health_bar.value = 1
 	health_componet.init_health(max_health)
+	
+	if not weapon:return
+	weapon_controller.equip_weapon(weapon)#这里的weapon是自己指定的weapon
 
-func _physics_process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
+	if not Global.player_ref:return
+	rotate_enemy()#在我看来在这里添加rotate_enemy是为了防止bug(在_physics_process里面有rotate_enemy)
+	manage_weapon()
+	
+
+
+func _physics_process(_delta: float) -> void:
 	if not Global.player_ref:return
 	if not can_move : return
 	
@@ -39,7 +53,17 @@ func _physics_process(delta: float) -> void:
 		
 	velocity = dir * chase_speed
 	move_and_slide()
-	rotate_enemy()
+	rotate_enemy()#在这里就会控制enemy转向
+
+
+func manage_weapon() -> void:
+	if not weapon:return
+	if not weapon_controller:return
+	weapon_controller.target_pos = Global.player_ref.global_position
+	weapon_controller.rotate_weapon()
+
+
+
 
 func rotate_enemy() -> void:
 	if global_position.x > Global.player_ref.global_position.x:
