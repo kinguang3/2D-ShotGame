@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dr2qbt1swgj0c" path="res://Data/Weapons/weapon_data.gd" id="1_0kdva"]
 [ext_resource type="Texture2D" uid="uid://c8876yfxbaoxl" path="res://Assets/Sprites/Weapons/Tiles/weapon_pistol.png" id="1_50jab"]
-[ext_resource type="PackedScene" uid="uid://c2ywaalnqmmdb" path="res://Bullet/bullet_pistol.tscn" id="1_sm4h0"]
+[ext_resource type="PackedScene" uid="uid://dvje64ekrlbjn" path="res://Bullet/Enemy/bullet_pistol_enemy.tscn" id="1_sm4h0"]
 
 [resource]
 script = ExtResource("1_0kdva")

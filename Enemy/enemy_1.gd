@@ -23,7 +23,7 @@ class_name Enemy
 
 var can_move:bool = true
 var is_killed:bool
-
+var cooldown:float
 
 func _ready() -> void:
 	health_bar.value = 1
@@ -33,10 +33,10 @@ func _ready() -> void:
 	weapon_controller.equip_weapon(weapon)#这里的weapon是自己指定的weapon
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if not Global.player_ref:return
 	rotate_enemy()#在我看来在这里添加rotate_enemy是为了防止bug(在_physics_process里面有rotate_enemy)
-	manage_weapon()
+	manage_weapon(delta)
 	
 
 
@@ -56,12 +56,16 @@ func _physics_process(_delta: float) -> void:
 	rotate_enemy()#在这里就会控制enemy转向
 
 
-func manage_weapon() -> void:
+func manage_weapon(delta: float) -> void:
 	if not weapon:return
 	if not weapon_controller:return
 	weapon_controller.target_pos = Global.player_ref.global_position
 	weapon_controller.rotate_weapon()
-
+	
+	cooldown -= delta
+	if cooldown <= 0:
+		weapon_controller.current_weapon.use_weapon()
+		cooldown = weapon_controller.current_weapon.data.cooldown
 
 
 
