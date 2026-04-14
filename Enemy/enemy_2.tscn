@@ -40,6 +40,7 @@ animations = [{
 radius = 3.0
 
 [node name="Enemy2" unique_id=1977277010 instance=ExtResource("1_61cgi")]
+dead_texture = ExtResource("2_pb2pr")
 
 [node name="AnimSprite" parent="." index="1" unique_id=711077315]
 sprite_frames = SubResource("SpriteFrames_f5xod")

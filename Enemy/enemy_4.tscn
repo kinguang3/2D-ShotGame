@@ -45,6 +45,8 @@ radius = 3.0
 size = Vector2(18, 21.5)
 
 [node name="Enemy4" unique_id=1977277010 instance=ExtResource("1_oilsd")]
+enemy_type = "Weapon"
+dead_texture = ExtResource("2_05gvt")
 weapon = ExtResource("2_isgvk")
 
 [node name="AnimSprite" parent="." index="1" unique_id=711077315]

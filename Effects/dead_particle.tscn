@@ -19,7 +19,6 @@ gravity = Vector3(0, 98, 0)
 scale_curve = SubResource("CurveTexture_8m36r")
 
 [node name="DeadParticle" type="GPUParticles2D" unique_id=1383193853]
-emitting = false
 amount = 1
 texture = ExtResource("1_dsxon")
 lifetime = 1.5

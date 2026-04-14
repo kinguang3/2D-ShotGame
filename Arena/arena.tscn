@@ -35,8 +35,9 @@ script = ExtResource("1_v8uor")
 arena_cursor = ExtResource("2_ts82m")
 level_data = ExtResource("3_ts82m")
 
-[node name="EnemySpawner" type="Node2D" parent="." unique_id=1566125616]
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1566125616 node_paths=PackedStringArray("arena")]
 script = ExtResource("4_rirfp")
+arena = NodePath("..")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=171283071]
 

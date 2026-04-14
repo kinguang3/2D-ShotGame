@@ -57,6 +57,7 @@ bg_color = Color(0.6, 0.05882353, 0.11764706, 1)
 scale = Vector2(1.5, 1.5)
 collision_layer = 4
 script = ExtResource("1_5nq5f")
+dead_texture = ExtResource("3_muxli")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=525527704]
 self_modulate = Color(1, 1, 1, 0.7058824)

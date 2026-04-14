@@ -42,6 +42,8 @@ animations = [{
 radius = 9.055386
 
 [node name="Enemy3" unique_id=1977277010 instance=ExtResource("1_wk5wl")]
+enemy_type = "Weapon"
+dead_texture = ExtResource("2_ekqx3")
 weapon = ExtResource("2_25mqn")
 
 [node name="AnimSprite" parent="." index="1" unique_id=711077315]

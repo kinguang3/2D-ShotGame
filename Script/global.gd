@@ -13,6 +13,7 @@ const DAMAGE_TEXT_SCENE = preload("uid://b8qwyqx8djwvi")
 const SPAWN_MARKER_SCENE = preload("uid://vt2qjnvkrhdg")
 const DEAD_PARTICLE_SCENE = preload("uid://cj7hhiy85c3wr")
 const HIT_MATERIAL = preload("uid://cqvnlp0ewb35u")
+const BLOOD_EFFECT_SCENE = preload("uid://y7u3ho31us00")
 
 
 
@@ -65,14 +66,17 @@ func create_damage_text(value:float,pos:Vector2) -> void:
 	var random_pos = randf_range(0,TAU) #圆常量，单位圆的周长，单位为弧度。相当于 PI * 2，即 360 度旋转
 	damage.global_position = pos + Vector2.RIGHT.rotated(random_pos) * 20#范围更大
 	damage.setup(value)
-	pass
+	var blood = BLOOD_EFFECT_SCENE.instantiate()
+	get_parent().add_child(blood)
+	blood.global_position = pos
+
 
 func create_dead_particle(texture:Texture2D,pos:Vector2) -> void:
 	var particle = DEAD_PARTICLE_SCENE.instantiate() as GPUParticles2D
 	get_tree().root.add_child(particle)
 	particle.global_position = pos
 	particle.texture = texture
-	
+	particle.emitting = true
 
 func save_data() -> void: #存储数据的格式
 	var save = settings.duplicate() #返回字典的新副本。
