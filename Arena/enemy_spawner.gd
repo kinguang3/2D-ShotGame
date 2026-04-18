@@ -4,7 +4,7 @@ class_name EnemySpawner
 @export var arena: Arena
 
 var enemies:Array[Enemy] = []
-var enemies_killed:int
+var enemies_killed:float
 
 
 func _ready() -> void:
