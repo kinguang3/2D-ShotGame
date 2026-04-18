@@ -11,6 +11,8 @@ class_name Arena
 @onready var mana_bar: TextureProgressBar = %ManaBar
 @onready var map_controller: MapController = $UI/MapController
 @onready var enemy_spawner: EnemySpawner = $EnemySpawner
+@onready var total_coins: Label = %TotalCoins
+@onready var coin_sound: AudioStreamPlayer = $CoinSound
 
 var grid:Dictionary[Vector2i,LevelRoom] = {}#Vector2i:使用整数坐标的 2D 向量。
 #Vector2i代表房间坐标,用levelroom连接每一个坐标
@@ -28,7 +30,7 @@ func _ready() -> void:
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.on_player_room_entered.connect(_on_player_room_entered)
 	EventBus.on_room_cleared.connect(_on_room_cleared)
-	
+	EventBus.on_coin_picked.connect(_on_coin_picked)
 	
 	grid_cell_size = Vector2i(
 		level_data.corridor_size.x+level_data.room_size.x,
@@ -184,4 +186,10 @@ func _on_player_room_entered(room:LevelRoom) -> void:
 func _on_room_cleared() -> void:
 	current_room.unlock_room()
 	current_room.is_cleared = true
+	
+
+
+func _on_coin_picked() -> void:
+	coin_sound.play()
+	total_coins.text = str(Global.coins)
 	

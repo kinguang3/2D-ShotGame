@@ -9,7 +9,7 @@ var enemies_killed:float
 
 func _ready() -> void:
 	EventBus.on_enemy_die.connect(_on_enemy_die)
-	
+
 
 func spawn_enemies(data:LevelData,room:LevelRoom) -> void:
 	if data.enemy_scene.is_empty():

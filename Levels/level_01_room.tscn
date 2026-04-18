@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bp145uo7x0ffk" path="res://Levels/level_01_room.gd" id="1_tleej"]
 [ext_resource type="TileSet" uid="uid://dbdud73dgsisg" path="res://Extra/new_tile_set.tres" id="2_7pc4w"]
+[ext_resource type="PackedScene" uid="uid://d3aidbksfhmue" path="res://Item/coins.tscn" id="3_tleej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pc4w"]
 size = Vector2(290, 290)
@@ -79,5 +80,17 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1707829602]
 shape = SubResource("RectangleShape2D_7pc4w")
+
+[node name="Coins" parent="." unique_id=581975921 instance=ExtResource("3_tleej")]
+position = Vector2(-78, -45)
+
+[node name="Coins2" parent="." unique_id=1122995125 instance=ExtResource("3_tleej")]
+position = Vector2(52, -22)
+
+[node name="Coins3" parent="." unique_id=1192484704 instance=ExtResource("3_tleej")]
+position = Vector2(50, 74)
+
+[node name="Coins4" parent="." unique_id=1963471687 instance=ExtResource("3_tleej")]
+position = Vector2(-73, 62)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
