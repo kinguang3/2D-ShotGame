@@ -14,6 +14,8 @@ const SPAWN_MARKER_SCENE = preload("uid://vt2qjnvkrhdg")
 const DEAD_PARTICLE_SCENE = preload("uid://cj7hhiy85c3wr")
 const HIT_MATERIAL = preload("uid://cqvnlp0ewb35u")
 const BLOOD_EFFECT_SCENE = preload("uid://y7u3ho31us00")
+const CHEST_SCENE = preload("uid://du21pr73r1bg5")
+const STORE_ITEM_SCENE = preload("uid://u6jebtb3k488")
 
 
 

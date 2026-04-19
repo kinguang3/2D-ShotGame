@@ -1,6 +1,8 @@
 extends Node2D
 class_name LevelRoom
 #标记后续属性会在 Node 就绪时赋值
+@export var item_position:Array[Marker2D]
+
 @onready var player_spawn_pos: Marker2D = $PlayerSpawnPos
 @onready var tile_data: TileMapLayer = $TileData
 
@@ -33,6 +35,18 @@ func register_tiles() -> void:
 	for tile in tile_data.get_used_cells():#返回 Vector2i 数组，其中存放的是所有包含图块的单元格的位置
 		tiles.append(tile)#存入数组
 	
+
+
+func setup_room_as_shop(data:LevelData) -> void:
+	if data.store_data.is_empty():return
+	
+	for item_pos:Marker2D in item_position:
+		var item_data:ItemData = data.get_random_store_item()
+		var item_instance:StoreItem = Global.STORE_ITEM_SCENE.instantiate()
+		add_child(item_instance)
+		item_instance.global_position = item_pos.global_position
+		item_instance.setup(item_data)
+		
 
 func get_free_spawn_position() -> Vector2:
 	var tile_cood:Vector2i = tiles.pick_random()

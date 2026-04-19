@@ -22,9 +22,11 @@ func setup(item_data:ItemData) -> void:
 
 func buy_item() -> void:
 	if not data:return
+	if Global.coins < data.price:return
 	match data.id:
 		"Potion":
 			Global.player_ref.health_componet.heal(data.value)
+	Global.coins -= data.price
 	queue_free()
 
 

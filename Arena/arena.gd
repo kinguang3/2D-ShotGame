@@ -21,9 +21,9 @@ var start_room_coord:Vector2i#初始房间坐标
 var end_room_coord:Vector2i#最远房间坐标
 var grid_cell_size: Vector2i#创建最小房间单元(一个走廊+一个房间)
 var current_room:LevelRoom
-
-
 var player:Player
+var store_room_coord:Vector2i
+
 
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
@@ -38,7 +38,7 @@ func _ready() -> void:
 	)
 	
 	generate_level_layout()
-	select_special_rooms()#保证先创建房间网格，再选择特殊房间
+	select_special_rooms()#保证先创建房间网格，再选择特殊房间,选完特殊房间后，创建房间
 	create_rooms()#创建房间
 	create_corridor()#创建完房间,再创建连接
 	load_game_selection()
@@ -89,9 +89,15 @@ func create_rooms() -> void:
 		room_instance.create_props(level_data)#通过当前房间的信息来创建环境
 		grid[room_coord] = room_instance#实例化所有场景,将每一个coord和实例化场景连接
 		
+		if room_coord == store_room_coord:
+			room_instance.is_cleared = true#如果是特殊房间，说明已经清空了
+			room_instance.setup_room_as_shop(level_data)#设置shop_room
+		
 		connect_rooms(room_coord,room_instance)#用direction来连接所有房间
 		
 		#await get_tree().create_timer(0.5).timeout#创建时间看效果
+
+
 
 func create_corridor() -> void:
 	print("Create Corridor...")
@@ -134,8 +140,16 @@ func connect_rooms(room_coord:Vector2i,room_instance:LevelRoom)->void:
 func select_special_rooms() -> void:#初始换房间
 	start_room_coord = Vector2i.ZERO#初始化房间的坐标为(0,0)
 	end_room_coord = find_farthest_room()
-	print("Start:%s" % start_room_coord)#测试
-	print("End:%s" % end_room_coord)
+	var candidate_coords = grid.keys()
+	candidate_coords.erase(start_room_coord)#排除初始和结尾的房间
+	candidate_coords.erase(end_room_coord)
+	if not candidate_coords.is_empty():#防止非空
+		store_room_coord = candidate_coords.pick_random()
+	else:
+		store_room_coord = Vector2i.MAX
+		print("No shop coord")
+
+
 
 func find_farthest_room() -> Vector2i:#最后的房间是坐标最远的房间
 	var farthest_room_coord = start_room_coord #默认最后的房间是开始的房间
@@ -186,6 +200,11 @@ func _on_player_room_entered(room:LevelRoom) -> void:
 func _on_room_cleared() -> void:
 	current_room.unlock_room()
 	current_room.is_cleared = true
+	var tile_pos = current_room.get_free_spawn_position()#局部位置
+	var chest_pos = current_room.to_global(tile_pos)#将提供的本地位置转换为全局坐标空间的位置
+	var chest_instance :Chest= Global.CHEST_SCENE.instantiate()
+	call_deferred("add_child",chest_instance)#宝箱建议用call_deferred()
+	chest_instance.global_position = chest_pos#创建宝箱位置
 	
 
 
