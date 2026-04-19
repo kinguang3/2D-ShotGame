@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://du21pr73r1bg5"]
+
+[ext_resource type="Texture2D" uid="uid://b6i0q5i8rwf7l" path="res://Assets/Sprites/Tiles/tilemap_packed.png" id="1_i0p7m"]
+[ext_resource type="Script" uid="uid://dc3heoalbjrxd" path="res://Extra/chest.gd" id="1_rpowr"]
+[ext_resource type="AudioStream" uid="uid://cmxnbn2dtohwj" path="res://Assets/Sounds/chest.ogg" id="2_rpowr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aryd"]
+atlas = ExtResource("1_i0p7m")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlwh0"]
+atlas = ExtResource("1_i0p7m")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao8lg"]
+size = Vector2(16, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpccf"]
+radius = 19.026299
+
+[node name="Chest" type="StaticBody2D" unique_id=1639405848]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_rpowr")
+
+[node name="ChestClose" type="Sprite2D" parent="." unique_id=1297097255]
+texture = SubResource("AtlasTexture_5aryd")
+
+[node name="ChestOpen" type="Sprite2D" parent="." unique_id=1606833744]
+visible = false
+texture = SubResource("AtlasTexture_xlwh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=988051252]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ao8lg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=170373223]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1287556640]
+shape = SubResource("CircleShape2D_jpccf")
+debug_color = Color(0.68683267, 0.31511155, 0.96482354, 0.41960785)
+
+[node name="ChestSound" type="AudioStreamPlayer" parent="." unique_id=1815524046]
+stream = ExtResource("2_rpowr")
+bus = &"SFX"
+
+[node name="DropPosition" type="Marker2D" parent="." unique_id=1800251808]
+position = Vector2(0, 19)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
