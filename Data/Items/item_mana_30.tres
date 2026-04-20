@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b6vx6v3tjjfho"]
+
+[ext_resource type="Script" uid="uid://clw8y0hymsbhf" path="res://Data/Items/item_data.gd" id="1_072h1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_072h1"]
+load_path = "res://.godot/imported/Item_White3.png-3aed1d1e317115f9cdfb57857cb71378.ctex"
+
+[resource]
+script = ExtResource("1_072h1")
+icon = SubResource("CompressedTexture2D_072h1")
+id = "Mana"
+name = "Mana +30"
+value = 30.0
+price = 12.0
+rarity = "Epic"
+description = "Restore 30 points of mana"
+metadata/_custom_type_script = "uid://clw8y0hymsbhf"

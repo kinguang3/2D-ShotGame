@@ -14,23 +14,32 @@
 [ext_resource type="PackedScene" uid="uid://c2bbv7fcw1l75" path="res://Props/plant_4.tscn" id="5_7a7ad"]
 [ext_resource type="PackedScene" uid="uid://duwer16crtsph" path="res://Levels/level_01_roomv_corridor.tscn" id="5_8c3xl"]
 [ext_resource type="Resource" uid="uid://bqwibjt6jap6f" path="res://Data/Items/item_potion_2.tres" id="13_43w1k"]
+[ext_resource type="Resource" uid="uid://bx4sqi7fkc2pa" path="res://Data/Items/item_potion_5.tres" id="14_lx4w4"]
+[ext_resource type="Resource" uid="uid://crt4tich0i4kf" path="res://Data/Items/item_mana_5.tres" id="15_j8ina"]
+[ext_resource type="Resource" uid="uid://cb5aok3o5la1g" path="res://Data/Items/item_mana_boost_5.tres" id="16_nogjf"]
 
 [sub_resource type="Resource" id="Resource_b3tw4"]
 script = ExtResource("2_60yf1")
 item_data = ExtResource("13_43w1k")
-item_prob = 4.0
+item_prob = 5.0
 metadata/_custom_type_script = "uid://c0bl8ffbbv66"
 
 [sub_resource type="Resource" id="Resource_pefys"]
 script = ExtResource("2_60yf1")
-item_data = ExtResource("13_43w1k")
-item_prob = 2.0
+item_data = ExtResource("14_lx4w4")
+item_prob = 3.0
 metadata/_custom_type_script = "uid://c0bl8ffbbv66"
 
 [sub_resource type="Resource" id="Resource_lx4w4"]
 script = ExtResource("2_60yf1")
-item_data = ExtResource("13_43w1k")
-item_prob = 1.0
+item_data = ExtResource("15_j8ina")
+item_prob = 4.0
+metadata/_custom_type_script = "uid://c0bl8ffbbv66"
+
+[sub_resource type="Resource" id="Resource_ionfi"]
+script = ExtResource("2_60yf1")
+item_data = ExtResource("16_nogjf")
+item_prob = 2.0
 metadata/_custom_type_script = "uid://c0bl8ffbbv66"
 
 [resource]
@@ -41,5 +50,5 @@ h_corridor = ExtResource("1_c4wyr")
 v_corridor = ExtResource("5_8c3xl")
 props = Array[PackedScene]([ExtResource("2_vkhp1"), ExtResource("3_3pgnn"), ExtResource("4_ffyhe"), ExtResource("5_7a7ad")])
 enemy_scene = Array[PackedScene]([ExtResource("1_x1pt0"), ExtResource("2_43w1k"), ExtResource("3_b3tw4"), ExtResource("4_pefys")])
-store_data = Array[ExtResource("2_60yf1")]([SubResource("Resource_b3tw4"), SubResource("Resource_pefys"), SubResource("Resource_lx4w4")])
+store_data = Array[ExtResource("2_60yf1")]([SubResource("Resource_b3tw4"), SubResource("Resource_pefys"), SubResource("Resource_lx4w4"), SubResource("Resource_ionfi")])
 metadata/_custom_type_script = "uid://chk0gvosuwbib"

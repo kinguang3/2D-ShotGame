@@ -32,10 +32,10 @@ func  take_damage(value:float) -> void:
 			
 func die()->void:
 	current_health=0.0
-	on_unit_dead.emit()			
+	on_unit_dead.emit()
 	
 	
-func  heal(value:float)->void:
+func heal(value:float)->void:
 	if 	current_health>max_health:
 		return
 	

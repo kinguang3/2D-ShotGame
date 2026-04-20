@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://crkkhmmyspvjk"]
+
+[ext_resource type="Script" uid="uid://clw8y0hymsbhf" path="res://Data/Items/item_data.gd" id="1_kk8h3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kk8h3"]
+load_path = "res://.godot/imported/Item_White7.png-20a074eb18a16c4484299a86d4cf419b.ctex"
+
+[resource]
+script = ExtResource("1_kk8h3")
+icon = SubResource("CompressedTexture2D_kk8h3")
+id = "Speed"
+name = "Speed +15"
+value = 15.0
+price = 8.0
+rarity = "Rare"
+description = "Increase max speed by 15 points"
+metadata/_custom_type_script = "uid://clw8y0hymsbhf"

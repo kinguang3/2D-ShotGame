@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cb5aok3o5la1g"]
+
+[ext_resource type="Script" uid="uid://clw8y0hymsbhf" path="res://Data/Items/item_data.gd" id="1_vyct5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vyct5"]
+load_path = "res://.godot/imported/Item_White2.png-db5dd73eef9e62819a04c1c161715669.ctex"
+
+[resource]
+script = ExtResource("1_vyct5")
+icon = SubResource("CompressedTexture2D_vyct5")
+id = "ManaBoost"
+name = "Magic +5"
+value = 5.0
+price = 5.0
+description = "Increase max mana by 5 points"
+metadata/_custom_type_script = "uid://clw8y0hymsbhf"

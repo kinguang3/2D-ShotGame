@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bx4sqi7fkc2pa"]
+
+[ext_resource type="Script" uid="uid://clw8y0hymsbhf" path="res://Data/Items/item_data.gd" id="2_5rbb7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qdlh4"]
+load_path = "res://.godot/imported/Item_White1.png-984baf87eb2428e40757774ec183b8d2.ctex"
+
+[resource]
+script = ExtResource("2_5rbb7")
+icon = SubResource("CompressedTexture2D_qdlh4")
+id = "Potion"
+name = "Potion +5"
+value = 5.0
+price = 10.0
+rarity = "Rare"
+description = "Restore 5 points of health"
+metadata/_custom_type_script = "uid://clw8y0hymsbhf"
