@@ -5,6 +5,7 @@ class_name LevelRoom
 
 @onready var player_spawn_pos: Marker2D = $PlayerSpawnPos
 @onready var tile_data: TileMapLayer = $TileData
+@onready var portal_pos: Marker2D = $PortalPos
 
 
 
@@ -47,6 +48,14 @@ func setup_room_as_shop(data:LevelData) -> void:
 		item_instance.global_position = item_pos.global_position
 		item_instance.setup(item_data)
 		
+
+
+func setup_room_as_portal() -> void:
+	var portal = Global.PORTAL_SCENE.instantiate() as Node2D
+	add_child(portal)
+	portal.global_position = portal_pos.global_position
+
+
 
 func get_free_spawn_position() -> Vector2:
 	var tile_cood:Vector2i = tiles.pick_random()

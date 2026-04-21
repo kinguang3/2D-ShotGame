@@ -4,7 +4,7 @@ class_name Arena
 
 
 @export var arena_cursor:Texture2D
-@export var level_data:LevelData
+@export var levels:Array[LevelData]#创建不同房间的索引
 
 
 @onready var health_bar: TextureProgressBar = %HealthBar
@@ -13,6 +13,8 @@ class_name Arena
 @onready var enemy_spawner: EnemySpawner = $EnemySpawner
 @onready var total_coins: Label = %TotalCoins
 @onready var coin_sound: AudioStreamPlayer = $CoinSound
+@onready var dungeon: Node2D = $Dungeon
+@onready var level_title: Label = $UI/LevelTitle
 
 var grid:Dictionary[Vector2i,LevelRoom] = {}#Vector2i:使用整数坐标的 2D 向量。
 #Vector2i代表房间坐标,用levelroom连接每一个坐标
@@ -23,7 +25,9 @@ var grid_cell_size: Vector2i#创建最小房间单元(一个走廊+一个房间)
 var current_room:LevelRoom
 var player:Player
 var store_room_coord:Vector2i
-
+var current_level_index:int = 0 
+var current_sub_level:int = 1
+var level_data:LevelData
 
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
@@ -31,6 +35,41 @@ func _ready() -> void:
 	EventBus.on_player_room_entered.connect(_on_player_room_entered)
 	EventBus.on_room_cleared.connect(_on_room_cleared)
 	EventBus.on_coin_picked.connect(_on_coin_picked)
+	EventBus.on_portal_reach.connect(_on_portal_reach)
+	
+	level_data = levels[0]
+	generate_dungeon()
+	
+	
+	await get_tree().create_timer(0.5).timeout
+	show_level_title()
+
+
+func _process(delta: float) -> void:
+	total_coins.text = str(Global.coins)
+	if is_instance_valid(Global.player_ref):
+		mana_bar.value = Global.player_ref.current_mana / Global.player_ref.data.magic
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		current_room.unlock_room()
+		current_room.is_cleared = true
+
+func generate_dungeon() -> void:#在当前地牢里面创建房间和别的东西
+	for child in dungeon.get_children():
+		child.queue_free()
+	
+	await get_tree().process_frame#防止报错,等待一帧
+	
+	if player:
+		player.queue_free()
+		Global.player_ref = null#删除上一级地牢的所有东西
+	
+	map_controller.reset()
+	for child in map_controller.get_children():
+		child.queue_free()
+	
 	
 	grid_cell_size = Vector2i(
 		level_data.corridor_size.x+level_data.room_size.x,
@@ -47,20 +86,7 @@ func _ready() -> void:
 	first_room.is_cleared = true#初始附房间不锁定
 
 
-func _process(delta: float) -> void:
-	total_coins.text = str(Global.coins)
-	if is_instance_valid(Global.player_ref):
-		mana_bar.value = Global.player_ref.current_mana / Global.player_ref.data.magic
 
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		current_room.unlock_room()
-		current_room.is_cleared = true
-
-
-	
-	
 func generate_level_layout() -> void:
 	grid.clear()#清除字典,防止报错
 	print("Creating Layout...")#测试
@@ -92,13 +118,18 @@ func create_rooms() -> void:
 		var room_instance:LevelRoom = level_data.room_scene.instantiate()#实例化场景不受变量类型限制
 		room_instance.position = room_coord * grid_cell_size#每一个房间场景的实例化在自己创建的坐标上
 		#建立房间大小,用二维坐标乘于房间大小(最小单元房间大小)
-		add_child(room_instance)#添加为子节点
+		dungeon.add_child(room_instance)#添加为子节点
 		room_instance.create_props(level_data)#通过当前房间的信息来创建环境
 		grid[room_coord] = room_instance#实例化所有场景,将每一个coord和实例化场景连接
 		
 		if room_coord == store_room_coord:
 			room_instance.is_cleared = true#如果是特殊房间，说明已经清空了
 			room_instance.setup_room_as_shop(level_data)#设置shop_room
+		
+		if room_coord == end_room_coord:
+			room_instance.is_cleared = true
+			room_instance.setup_room_as_portal()
+		
 		
 		connect_rooms(room_coord,room_instance)#用direction来连接所有房间
 		
@@ -118,7 +149,7 @@ func create_corridor() -> void:
 			#var neighbor_pos = grid[right_neighbor].position
 			corridor.position = room_instance.position + Vector2(
 				grid_cell_size.x/2.0 , 0)#对于位置的坐标用vector2
-			add_child(corridor)
+			dungeon.add_child(corridor)
 		#创建下连接
 		var down_neighbor = room_coord + Vector2i.DOWN
 		if grid.has(down_neighbor):
@@ -127,7 +158,7 @@ func create_corridor() -> void:
 			#var neighbor_pos = grid[down_neighbor].position
 			corridor.position = room_instance.position + Vector2(
 				0 , grid_cell_size.y/2.0)#对于位置的坐标用vector2
-			add_child(corridor)#先添加在操作和后添加在操作应该是一样的
+			dungeon.add_child(corridor)#先添加在操作和后添加在操作应该是一样的
 		
 		
 		
@@ -156,6 +187,14 @@ func select_special_rooms() -> void:#初始换房间
 		store_room_coord = Vector2i.MAX
 		print("No shop coord")
 
+
+func show_level_title() -> void:
+	level_title.text = "%d-%d" % [current_level_index + 1,current_sub_level]
+	level_title.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
+	var tween = create_tween()
+	tween.tween_property(level_title,"self_modulate",Color(1.0, 1.0, 1.0, 1.0),1)
+	tween.tween_interval(1)
+	tween.tween_property(level_title,"self_modulate",Color(1.0, 1.0, 1.0, 0.0),1)
 
 
 func find_farthest_room() -> Vector2i:#最后的房间是坐标最远的房间
@@ -210,7 +249,7 @@ func _on_room_cleared() -> void:
 	var tile_pos = current_room.get_free_spawn_position()#局部位置
 	var chest_pos = current_room.to_global(tile_pos)#将提供的本地位置转换为全局坐标空间的位置
 	var chest_instance :Chest= Global.CHEST_SCENE.instantiate()
-	call_deferred("add_child",chest_instance)#宝箱建议用call_deferred()
+	dungeon.call_deferred("add_child",chest_instance)#宝箱建议用call_deferred()
 	chest_instance.global_position = chest_pos#创建宝箱位置
 	
 
@@ -219,3 +258,22 @@ func _on_coin_picked() -> void:
 	coin_sound.play()
 	
 	
+
+func _on_portal_reach() -> void:
+	await Transition.show_transition_in().finished
+	
+	if current_sub_level < level_data.num_sub_levels:
+		current_sub_level += 1
+		generate_dungeon()
+	else:
+		current_level_index += 1
+		if current_level_index < levels.size():
+			current_sub_level = 1
+			level_data = levels[current_level_index]
+			generate_dungeon()
+		else:
+			print("No more room")
+			Transition.traansition_to("res://UI/mainmenu.tscn")
+		
+	await Transition.show_transition_out().finished
+	show_level_title()

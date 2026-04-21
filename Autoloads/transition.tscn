@@ -14,7 +14,7 @@ shader_parameter/bayer_size = 2
 shader_parameter/interpolate = true
 shader_parameter/invert = false
 shader_parameter/falloff = 2.5
-shader_parameter/color = Color(0.7218587, 0.7218587, 0.7218587, 1)
+shader_parameter/color = Color(0.6310349, 0.631035, 0.6310349, 1)
 
 [node name="Transition" type="Node" unique_id=1597695444]
 script = ExtResource("1_esvv7")

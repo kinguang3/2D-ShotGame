@@ -5,6 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://dawvmsgg5mc6o" path="res://Assets/Sprites/Shadow.png" id="2_vdc2k"]
 [ext_resource type="PackedScene" uid="uid://bw7a54qtf40gi" path="res://Weapon/weapon_controller.tscn" id="4_vdc2k"]
 
+[sub_resource type="Gradient" id="Gradient_vdc2k"]
+offsets = PackedFloat32Array(0, 0.76449275)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qlvkq"]
+gradient = SubResource("Gradient_vdc2k")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="PlayerBase" type="CharacterBody2D" unique_id=235996426]
 collision_layer = 2
 script = ExtResource("1_l3xgm")
@@ -28,6 +37,12 @@ script = ExtResource("2_8fx1m")
 metadata/_custom_type_script = "uid://bibjo3ruxp2ix"
 
 [node name="WeaponController" parent="." unique_id=421724324 instance=ExtResource("4_vdc2k")]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=402851621]
+color = Color(1, 1, 1, 0.50980395)
+energy = 0.3
+texture = SubResource("GradientTexture2D_qlvkq")
+texture_scale = 1.5
 
 [connection signal="on_unit_damaged" from="HealthComponet" to="." method="_on_health_componet_on_unit_damaged"]
 [connection signal="on_unit_dead" from="HealthComponet" to="." method="_on_health_componet_on_unit_dead"]

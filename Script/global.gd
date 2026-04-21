@@ -16,6 +16,7 @@ const HIT_MATERIAL = preload("uid://cqvnlp0ewb35u")
 const BLOOD_EFFECT_SCENE = preload("uid://y7u3ho31us00")
 const CHEST_SCENE = preload("uid://du21pr73r1bg5")
 const STORE_ITEM_SCENE = preload("uid://u6jebtb3k488")
+const PORTAL_SCENE = preload("uid://dt2gf05547rhl")
 
 
 

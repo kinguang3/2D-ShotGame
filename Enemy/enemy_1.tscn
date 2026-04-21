@@ -53,6 +53,15 @@ bg_color = Color(0.18240857, 0.019250503, 0.009813138, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pct6h"]
 bg_color = Color(0.6, 0.05882353, 0.11764706, 1)
 
+[sub_resource type="Gradient" id="Gradient_vdc2k"]
+offsets = PackedFloat32Array(0, 0.76449275)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pct6h"]
+gradient = SubResource("Gradient_vdc2k")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Enemy1" type="CharacterBody2D" unique_id=1977277010]
 scale = Vector2(1.5, 1.5)
 collision_layer = 4
@@ -110,6 +119,12 @@ show_percentage = false
 [node name="HealthComponet" type="Node2D" parent="." unique_id=1171078161]
 script = ExtResource("7_pct6h")
 metadata/_custom_type_script = "uid://bibjo3ruxp2ix"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=468449227]
+color = Color(0.80649245, 0, 0.18125856, 0.50980395)
+energy = 0.25
+texture = SubResource("GradientTexture2D_pct6h")
+texture_scale = 1.3
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="on_unit_damaged" from="HealthComponet" to="." method="_on_health_componet_on_unit_damaged"]
