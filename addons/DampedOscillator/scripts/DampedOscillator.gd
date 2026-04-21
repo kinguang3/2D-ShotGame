@@ -38,4 +38,3 @@ func animate(node, propertie: String, string: float, damp: float, velocity: floa
 	
 	# Yayy finally
 	add_child(i)
-

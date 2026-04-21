@@ -9,4 +9,5 @@ icon = ExtResource("1_ca6n5")
 id = "Bunny"
 max_hp = 7.0
 move_speed = 250
+magic = 35
 metadata/_custom_type_script = "uid://bnoncabdvjggf"

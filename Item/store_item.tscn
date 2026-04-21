@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://u2n0mmtlmuiq" path="res://Item/store_item.gd" id="1_a76ow"]
 [ext_resource type="Texture2D" uid="uid://0poobuecm0un" path="res://Assets/Sprites/Items/Item_White1.png" id="2_0gc4i"]
 [ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="3_0gc4i"]
+[ext_resource type="PackedScene" uid="uid://dfts8ppsv4648" path="res://UI/Desscriptions/description_panel.tscn" id="5_wgynj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a76ow"]
 radius = 25.079872
@@ -83,6 +84,13 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1835285805]
 libraries/ = SubResource("AnimationLibrary_3wbsi")
 autoplay = &"idle"
+
+[node name="DescriptionPanel" parent="." unique_id=78506119 instance=ExtResource("5_wgynj")]
+visible = false
+offset_left = -97.0
+offset_top = -125.0
+offset_right = 103.0
+offset_bottom = -25.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -14,7 +14,10 @@ var movement : Vector2
 var direction : Vector2
 var cooldown:float
 
+var current_mana:float
+
 func _ready() -> void:
+	current_mana = data.magic
 	health_componet.init_health(data.max_hp)
 
 
@@ -23,10 +26,11 @@ func _process(delta: float) -> void:
 	weapon_controller.rotate_weapon()
 	
 	cooldown -= delta
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and current_mana >= weapon_controller.current_weapon.data.mana_cost:
 		if cooldown <= 0:
 			weapon_controller.current_weapon.use_weapon()
 			cooldown = weapon_controller.current_weapon.data.cooldown#为了把weapon添加到enemy,单独将cooldown添加到player里面
+			use_mana(weapon_controller.current_weapon.data.mana_cost)
 
 
 func _physics_process(_delta: float) -> void: #平面角色的基本运动逻辑
@@ -54,6 +58,12 @@ func rotate_player() -> void:
 	pass
 	
 	
+
+
+func use_mana(value:float) -> void:
+	if current_mana < value:return
+	current_mana -= value
+
 
 func _on_health_componet_on_unit_damaged(amount: float) -> void:
 	EventBus.on_player_health_updated.emit(health_componet.current_health,data.max_hp)

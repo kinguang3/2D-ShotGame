@@ -45,7 +45,14 @@ func _ready() -> void:
 	
 	var first_room = grid[Vector2i.ZERO]
 	first_room.is_cleared = true#初始附房间不锁定
-	
+
+
+func _process(delta: float) -> void:
+	total_coins.text = str(Global.coins)
+	if is_instance_valid(Global.player_ref):
+		mana_bar.value = Global.player_ref.current_mana / Global.player_ref.data.magic
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		current_room.unlock_room()
@@ -210,5 +217,5 @@ func _on_room_cleared() -> void:
 
 func _on_coin_picked() -> void:
 	coin_sound.play()
-	total_coins.text = str(Global.coins)
+	
 	

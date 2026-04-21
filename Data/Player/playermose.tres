@@ -8,5 +8,6 @@ script = ExtResource("1_if463")
 icon = ExtResource("1_7bb3t")
 id = "Mouse"
 max_hp = 10.0
-move_speed = 210
+move_speed = 220
+magic = 30
 metadata/_custom_type_script = "uid://bnoncabdvjggf"
