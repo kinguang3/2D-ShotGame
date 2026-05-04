@@ -39,7 +39,7 @@ func _ready() -> void:
 	health_bar.value = 1
 	health_componet.init_health(max_health)
 	
-	if not weapon:return
+	if not weapon :return
 	weapon_controller.equip_weapon(weapon)#这里的weapon是自己指定的weapon
 
 

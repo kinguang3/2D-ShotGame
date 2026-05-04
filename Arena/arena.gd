@@ -277,3 +277,9 @@ func _on_portal_reach() -> void:
 		
 	await Transition.show_transition_out().finished
 	show_level_title()
+
+
+
+func _notification(what: int) -> void:#当对象收到通知时被调用，可以通过将 what 与常量比较来识别通知
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		Global.save_data()

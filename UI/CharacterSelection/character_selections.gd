@@ -77,3 +77,8 @@ func _on_play_button_mouse_entered() -> void:
 
 func _on_back_button_mouse_entered() -> void:
 	hover_sound.play()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		Global.save_data()

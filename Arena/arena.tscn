@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://Assets/Sprites/Players/tile_0000.png" id="3_weid8"]
 [ext_resource type="Script" uid="uid://5wrjarl5fr5g" path="res://Arena/enemy_spawner.gd" id="4_rirfp"]
 [ext_resource type="Texture2D" uid="uid://dfcpfjhik5kir" path="res://Ornate Retro UI/spritesheets/PastelPinkUISheet.png" id="5_uea7w"]
+[ext_resource type="Script" uid="uid://dmynq717irpo7" path="res://UI/Pause/Pause.gd" id="6_smyjd"]
 [ext_resource type="Script" uid="uid://bfcg0gfrpcptk" path="res://Arena/map_controller.gd" id="8_o3erf"]
 [ext_resource type="Texture2D" uid="uid://cnkiu5jecgwsr" path="res://Assets/Sprites/coin.png" id="10_m3njq"]
 [ext_resource type="FontFile" uid="uid://cjve7majsoyfb" path="res://DungeonFont.ttf" id="11_g0v6a"]
 [ext_resource type="AudioStream" uid="uid://ba0dl85nv328f" path="res://Assets/Sounds/coin-c.ogg" id="12_0plnc"]
 [ext_resource type="Shader" uid="uid://c1c7se675xxge" path="res://Shaders/vignette.gdshader" id="13_e3rs8"]
+[ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://Assets/Sprites/Interface/Tilemap/tilemap_packed.png" id="14_qf27x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weid8"]
 atlas = ExtResource("1_sswsf")
@@ -46,6 +48,14 @@ font_size = 48
 shader = ExtResource("13_e3rs8")
 shader_parameter/outerRadius = 1.250000059375
 shader_parameter/MainAlpha = 0.30000001425
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gom4c"]
+atlas = ExtResource("14_qf27x")
+region = Rect2(81, 65, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smyjd"]
+atlas = ExtResource("14_qf27x")
+region = Rect2(176, 48, 48, 16)
 
 [node name="Arena" type="Node2D" unique_id=952634685]
 script = ExtResource("1_v8uor")
@@ -194,6 +204,139 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="PausesLayer" type="CanvasLayer" parent="." unique_id=1417923883]
+process_mode = 3
+script = ExtResource("6_smyjd")
+area_cursor = ExtResource("2_ts82m")
+pause_cursor = SubResource("AtlasTexture_gom4c")
+
+[node name="Pause" type="Control" parent="PausesLayer" unique_id=741995498]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausePanel" type="Panel" parent="PausesLayer/Pause" unique_id=1460509214]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseLabel" type="Label" parent="PausesLayer/Pause/PausePanel" unique_id=1178588572]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_top = 68.0
+offset_right = 54.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_g0v6a")
+theme_override_font_sizes/font_size = 48
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="PausesLayer/Pause/PausePanel" unique_id=1770290337]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -59.0
+offset_right = 78.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_smyjd")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PausesLayer/Pause/PausePanel/ContinueButton" unique_id=1333753174]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_g0v6a")
+theme_override_font_sizes/font_size = 24
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackMain" type="Button" parent="PausesLayer/Pause/PausePanel" unique_id=786733317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_smyjd")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PausesLayer/Pause/PausePanel/BackMain" unique_id=123311242]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_g0v6a")
+theme_override_font_sizes/font_size = 24
+text = "BackMain"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="PausesLayer/Pause/PausePanel" unique_id=121801230]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 61.0
+offset_right = 78.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_smyjd")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PausesLayer/Pause/PausePanel/Quit" unique_id=140138384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_g0v6a")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=214872211]
 stream = ExtResource("12_0plnc")
 bus = &"SFX"
+
+[connection signal="pressed" from="PausesLayer/Pause/PausePanel/ContinueButton" to="PausesLayer" method="unpause"]
+[connection signal="pressed" from="PausesLayer/Pause/PausePanel/BackMain" to="PausesLayer" method="backmain"]
+[connection signal="pressed" from="PausesLayer/Pause/PausePanel/Quit" to="PausesLayer" method="quit"]
