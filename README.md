@@ -1,4 +1,4 @@
-# 2D射击游戏 (2D Shooting Game)
+# BlackShot
 
 基于 **Godot 4.6** 开发的2D射击游戏。
 
@@ -45,7 +45,7 @@
 ## 📁 项目结构
 
 ```
-2D射击游戏/
+BlackShot/
 ├── Arena/                 # 战斗场景
 │   ├── arena.gd           # 战斗场景脚本
 │   ├── arena.tscn         # 战斗场景
@@ -105,10 +105,16 @@
 | 渲染 | GL Compatibility |
 | 物理 | Jolt Physics |
 | 音频 | Godot Audio System |
+| 平台 | Windows Desktop (x86_64) |
 | 多人服务 | FastAPI |
 
 ## 🚀 运行方式
 
+### 方式一：直接运行可执行文件
+1. 下载 `Game/射击游戏.exe`
+2. 双击运行即可
+
+### 方式二：使用Godot引擎运行
 1. 下载并安装 [Godot 4.6](https://godotengine.org/)
 2. 打开项目文件夹
 3. 点击运行按钮或按 F5 启动游戏
